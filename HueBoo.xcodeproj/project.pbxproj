@@ -10,7 +10,17 @@
 		5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */; };
 		5BC9BDA6233237FE0028AC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA5233237FE0028AC29 /* Assets.xcassets */; };
 		5BC9BDA9233237FE0028AC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA7233237FE0028AC29 /* LaunchScreen.storyboard */; };
-		5BC9BDB4233237FE0028AC29 /* HueBooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDB3233237FE0028AC29 /* HueBooTests.swift */; };
+		5BC9BDBF233238530028AC29 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDBE233238530028AC29 /* RootInteractor.swift */; };
+		5BC9BDC1233238610028AC29 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDC0233238610028AC29 /* RootViewController.swift */; };
+		5BC9BDC7233238C10028AC29 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDC6233238C10028AC29 /* ColorManager.swift */; };
+		5BC9BDC9233238D20028AC29 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDC8233238D20028AC29 /* ColorSet.swift */; };
+		5BC9BDCB233238E20028AC29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDCA233238E20028AC29 /* Constants.swift */; };
+		5BC9BDCD233238F30028AC29 /* PrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDCC233238F30028AC29 /* PrimaryLabel.swift */; };
+		5BC9BDCF233239020028AC29 /* RootCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDCE233239020028AC29 /* RootCollectionView.swift */; };
+		5BC9BDD1233239100028AC29 /* RootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD0233239100028AC29 /* RootCell.swift */; };
+		5BC9BDD3233239230028AC29 /* Spies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD2233239230028AC29 /* Spies.swift */; };
+		5BC9BDD5233239300028AC29 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD4233239300028AC29 /* Fixtures.swift */; };
+		5BC9BDD72332393E0028AC29 /* RootInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +40,18 @@
 		5BC9BDA8233237FE0028AC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BC9BDAA233237FE0028AC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC9BDAF233237FE0028AC29 /* HueBooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HueBooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BC9BDB3233237FE0028AC29 /* HueBooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooTests.swift; sourceTree = "<group>"; };
 		5BC9BDB5233237FE0028AC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BC9BDBE233238530028AC29 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		5BC9BDC0233238610028AC29 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		5BC9BDC6233238C10028AC29 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		5BC9BDC8233238D20028AC29 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		5BC9BDCA233238E20028AC29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5BC9BDCC233238F30028AC29 /* PrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLabel.swift; sourceTree = "<group>"; };
+		5BC9BDCE233239020028AC29 /* RootCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCollectionView.swift; sourceTree = "<group>"; };
+		5BC9BDD0233239100028AC29 /* RootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCell.swift; sourceTree = "<group>"; };
+		5BC9BDD2233239230028AC29 /* Spies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spies.swift; sourceTree = "<group>"; };
+		5BC9BDD4233239300028AC29 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */,
+				5BC9BDBE233238530028AC29 /* RootInteractor.swift */,
+				5BC9BDC0233238610028AC29 /* RootViewController.swift */,
+				5BC9BDC22332387C0028AC29 /* Managers */,
+				5BC9BDC3233238880028AC29 /* Models */,
+				5BC9BDC42332389B0028AC29 /* Shared */,
+				5BC9BDC5233238A10028AC29 /* Views */,
 				5BC9BDA5233237FE0028AC29 /* Assets.xcassets */,
 				5BC9BDA7233237FE0028AC29 /* LaunchScreen.storyboard */,
 				5BC9BDAA233237FE0028AC29 /* Info.plist */,
@@ -84,10 +110,46 @@
 		5BC9BDB2233237FE0028AC29 /* HueBooTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BC9BDB3233237FE0028AC29 /* HueBooTests.swift */,
+				5BC9BDD4233239300028AC29 /* Fixtures.swift */,
+				5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */,
+				5BC9BDD2233239230028AC29 /* Spies.swift */,
 				5BC9BDB5233237FE0028AC29 /* Info.plist */,
 			);
 			path = HueBooTests;
+			sourceTree = "<group>";
+		};
+		5BC9BDC22332387C0028AC29 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5BC9BDC6233238C10028AC29 /* ColorManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5BC9BDC3233238880028AC29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5BC9BDC8233238D20028AC29 /* ColorSet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5BC9BDC42332389B0028AC29 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5BC9BDCA233238E20028AC29 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5BC9BDC5233238A10028AC29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BC9BDCC233238F30028AC29 /* PrimaryLabel.swift */,
+				5BC9BDCE233239020028AC29 /* RootCollectionView.swift */,
+				5BC9BDD0233239100028AC29 /* RootCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC9BDBF233238530028AC29 /* RootInteractor.swift in Sources */,
 				5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */,
+				5BC9BDC1233238610028AC29 /* RootViewController.swift in Sources */,
+				5BC9BDC7233238C10028AC29 /* ColorManager.swift in Sources */,
+				5BC9BDC9233238D20028AC29 /* ColorSet.swift in Sources */,
+				5BC9BDD1233239100028AC29 /* RootCell.swift in Sources */,
+				5BC9BDCB233238E20028AC29 /* Constants.swift in Sources */,
+				5BC9BDCF233239020028AC29 /* RootCollectionView.swift in Sources */,
+				5BC9BDCD233238F30028AC29 /* PrimaryLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC9BDB4233237FE0028AC29 /* HueBooTests.swift in Sources */,
+				5BC9BDD3233239230028AC29 /* Spies.swift in Sources */,
+				5BC9BDD72332393E0028AC29 /* RootInteractorTests.swift in Sources */,
+				5BC9BDD5233239300028AC29 /* Fixtures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
