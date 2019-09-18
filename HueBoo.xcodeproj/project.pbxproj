@@ -21,6 +21,7 @@
 		5BC9BDD3233239230028AC29 /* Spies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD2233239230028AC29 /* Spies.swift */; };
 		5BC9BDD5233239300028AC29 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD4233239300028AC29 /* Fixtures.swift */; };
 		5BC9BDD72332393E0028AC29 /* RootInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */; };
+		5BC9BDD923323B250028AC29 /* ColorManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		5BC9BDD2233239230028AC29 /* Spies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spies.swift; sourceTree = "<group>"; };
 		5BC9BDD4233239300028AC29 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorTests.swift; sourceTree = "<group>"; };
+		5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				5BC9BDD4233239300028AC29 /* Fixtures.swift */,
 				5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */,
+				5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */,
 				5BC9BDD2233239230028AC29 /* Spies.swift */,
 				5BC9BDB5233237FE0028AC29 /* Info.plist */,
 			);
@@ -271,6 +274,7 @@
 				5BC9BDD3233239230028AC29 /* Spies.swift in Sources */,
 				5BC9BDD72332393E0028AC29 /* RootInteractorTests.swift in Sources */,
 				5BC9BDD5233239300028AC29 /* Fixtures.swift in Sources */,
+				5BC9BDD923323B250028AC29 /* ColorManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
