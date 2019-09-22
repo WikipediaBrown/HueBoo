@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var interactor: RootInteractor?
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         interactor = RootInteractor(presenter: RootViewController(), colorManager: ColorManager())
         window = UIWindow(frame: UIScreen.main.bounds)

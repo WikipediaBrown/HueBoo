@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23482A172ED2AE9AEEE1B86C /* Pods_HueBoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94658235BD3E8ED7F20E492D /* Pods_HueBoo.framework */; };
 		5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */; };
 		5BC9BDA6233237FE0028AC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA5233237FE0028AC29 /* Assets.xcassets */; };
 		5BC9BDA9233237FE0028AC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA7233237FE0028AC29 /* LaunchScreen.storyboard */; };
@@ -22,6 +23,8 @@
 		5BC9BDD5233239300028AC29 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD4233239300028AC29 /* Fixtures.swift */; };
 		5BC9BDD72332393E0028AC29 /* RootInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */; };
 		5BC9BDD923323B250028AC29 /* ColorManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */; };
+		5BD7FBB52336F0D70091F022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BD7FBB42336F0D70091F022 /* GoogleService-Info.plist */; };
+		DB8BB6C25C015C8DA404D1D1 /* Pods_HueBooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28748C5D539C6B5177C28C9B /* Pods_HueBooTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28748C5D539C6B5177C28C9B /* Pods_HueBooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HueBooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC9BD9B233237FD0028AC29 /* HueBoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueBoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC9BDA5233237FE0028AC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +58,12 @@
 		5BC9BDD4233239300028AC29 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorTests.swift; sourceTree = "<group>"; };
 		5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManagerTests.swift; sourceTree = "<group>"; };
+		5BD7FBB42336F0D70091F022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7C551C6C776E4A9DEE39B41B /* Pods-HueBoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBoo.release.xcconfig"; path = "Target Support Files/Pods-HueBoo/Pods-HueBoo.release.xcconfig"; sourceTree = "<group>"; };
+		94658235BD3E8ED7F20E492D /* Pods_HueBoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HueBoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCFF23209C0AB396F3ECC6E /* Pods-HueBooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBooTests.debug.xcconfig"; path = "Target Support Files/Pods-HueBooTests/Pods-HueBooTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E049B874E0A6D5DAE5960D60 /* Pods-HueBooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBooTests.release.xcconfig"; path = "Target Support Files/Pods-HueBooTests/Pods-HueBooTests.release.xcconfig"; sourceTree = "<group>"; };
+		F0D27541049FEBB543DEF723 /* Pods-HueBoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBoo.debug.xcconfig"; path = "Target Support Files/Pods-HueBoo/Pods-HueBoo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23482A172ED2AE9AEEE1B86C /* Pods_HueBoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8BB6C25C015C8DA404D1D1 /* Pods_HueBooTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +92,8 @@
 				5BC9BD9D233237FD0028AC29 /* HueBoo */,
 				5BC9BDB2233237FE0028AC29 /* HueBooTests */,
 				5BC9BD9C233237FD0028AC29 /* Products */,
+				A0F5C02DE97E69C0A82C5451 /* Pods */,
+				91D5CFB633A1B10461A2B67A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +118,7 @@
 				5BC9BDC5233238A10028AC29 /* Views */,
 				5BC9BDA5233237FE0028AC29 /* Assets.xcassets */,
 				5BC9BDA7233237FE0028AC29 /* LaunchScreen.storyboard */,
+				5BD7FBB42336F0D70091F022 /* GoogleService-Info.plist */,
 				5BC9BDAA233237FE0028AC29 /* Info.plist */,
 			);
 			path = HueBoo;
@@ -155,6 +170,27 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		91D5CFB633A1B10461A2B67A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94658235BD3E8ED7F20E492D /* Pods_HueBoo.framework */,
+				28748C5D539C6B5177C28C9B /* Pods_HueBooTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0F5C02DE97E69C0A82C5451 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0D27541049FEBB543DEF723 /* Pods-HueBoo.debug.xcconfig */,
+				7C551C6C776E4A9DEE39B41B /* Pods-HueBoo.release.xcconfig */,
+				ADCFF23209C0AB396F3ECC6E /* Pods-HueBooTests.debug.xcconfig */,
+				E049B874E0A6D5DAE5960D60 /* Pods-HueBooTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BC9BDB8233237FE0028AC29 /* Build configuration list for PBXNativeTarget "HueBoo" */;
 			buildPhases = (
+				84B5BE9EBBFF70C9EC52FDB3 /* [CP] Check Pods Manifest.lock */,
 				5BC9BD97233237FD0028AC29 /* Sources */,
 				5BC9BD98233237FD0028AC29 /* Frameworks */,
 				5BC9BD99233237FD0028AC29 /* Resources */,
+				C896B16A6C2B66A8532BFBE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BC9BDBB233237FE0028AC29 /* Build configuration list for PBXNativeTarget "HueBooTests" */;
 			buildPhases = (
+				0D1FC56117022D80851D6AF0 /* [CP] Check Pods Manifest.lock */,
 				5BC9BDAB233237FE0028AC29 /* Sources */,
 				5BC9BDAC233237FE0028AC29 /* Frameworks */,
 				5BC9BDAD233237FE0028AC29 /* Resources */,
@@ -237,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC9BDA9233237FE0028AC29 /* LaunchScreen.storyboard in Resources */,
+				5BD7FBB52336F0D70091F022 /* GoogleService-Info.plist in Resources */,
 				5BC9BDA6233237FE0028AC29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +289,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D1FC56117022D80851D6AF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HueBooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84B5BE9EBBFF70C9EC52FDB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HueBoo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C896B16A6C2B66A8532BFBE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HueBoo/Pods-HueBoo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HueBoo/Pods-HueBoo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HueBoo/Pods-HueBoo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BC9BD97233237FD0028AC29 /* Sources */ = {
@@ -418,6 +522,7 @@
 		};
 		5BC9BDB9233237FE0028AC29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D27541049FEBB543DEF723 /* Pods-HueBoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -436,6 +541,7 @@
 		};
 		5BC9BDBA233237FE0028AC29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C551C6C776E4A9DEE39B41B /* Pods-HueBoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +560,7 @@
 		};
 		5BC9BDBC233237FE0028AC29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADCFF23209C0AB396F3ECC6E /* Pods-HueBooTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +582,7 @@
 		};
 		5BC9BDBD233237FE0028AC29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E049B874E0A6D5DAE5960D60 /* Pods-HueBooTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

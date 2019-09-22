@@ -29,7 +29,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listener?.onHeroTile()
+//        listener?.onHeroTile()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -70,8 +70,21 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     
     private func setupViews() {
         
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
+        gradientLayer.frame = UIScreen.main.bounds
+        gradientLayer.locations = [ 0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        collectionView.layer.insertSublayer(gradientLayer, at: 0)
+        
+        
+        
+        
+        
         collectionView.listener = self
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .clear
         
         view.addSubview(collectionView)
         
