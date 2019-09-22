@@ -69,20 +69,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     }
     
     private func setupViews() {
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
-        gradientLayer.frame = UIScreen.main.bounds
-        gradientLayer.locations = [ 0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
-        collectionView.layer.insertSublayer(gradientLayer, at: 0)
-        
-        
-        
-        
-        
+
         collectionView.listener = self
         collectionView.backgroundColor = .clear
         
@@ -93,7 +80,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
-            ])
+        ])
         
     }
     

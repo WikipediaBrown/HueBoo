@@ -25,6 +25,17 @@ class RootCollectionView: UICollectionView {
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         layout.minimumLineSpacing = 0
         super.init(frame: .zero, collectionViewLayout: layout)
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
+        gradientLayer.frame = UIScreen.main.bounds
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.type = .radial
+        
+        layer.insertSublayer(gradientLayer, at: 0)
+        
         dataSource = self
         delegate = self
         isPagingEnabled = true

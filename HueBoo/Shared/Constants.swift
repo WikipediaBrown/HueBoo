@@ -17,6 +17,7 @@ struct Constants {
         static let standardMargin: CGFloat = 8
         static let cellPadding: CGFloat = 6
         static let primaryLabelFontSize: CGFloat = 43
+        static let hueBooLogoFontSize: CGFloat = 43
     }
     struct CGSizes {
         static let screenSize: CGSize = UIScreen.main.bounds.size
