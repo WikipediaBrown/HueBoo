@@ -17,6 +17,8 @@ protocol RootCollectionViewListening: class {
 
 class RootCollectionView: UICollectionView {
     
+    private let hueBooLabel = HueBooLabel()
+    
     weak var listener: RootCollectionViewListening?
     
     init() {
@@ -25,17 +27,7 @@ class RootCollectionView: UICollectionView {
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         layout.minimumLineSpacing = 0
         super.init(frame: .zero, collectionViewLayout: layout)
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
-        gradientLayer.frame = UIScreen.main.bounds
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.type = .radial
-        
-        layer.insertSublayer(gradientLayer, at: 0)
-        
+        setupViews()
         dataSource = self
         delegate = self
         isPagingEnabled = true
@@ -50,6 +42,29 @@ class RootCollectionView: UICollectionView {
     func insertItem(at indexPath: IndexPath) {
         reloadData()
         scrollToItem(at: indexPath, at: .right, animated: true)
+    }
+    
+    private func setupViews() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
+        gradientLayer.frame = UIScreen.main.bounds
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.type = .radial
+        
+        layer.insertSublayer(gradientLayer, at: 0)
+        
+        addSubview(hueBooLabel)
+        
+        NSLayoutConstraint.activate([
+            hueBooLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            hueBooLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: -80),
+            hueBooLabel.heightAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoHeight),
+            hueBooLabel.widthAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoWidth)
+        ])
+        
+//        hueBooLabel.transform = CGAffineTransform(rotationAngle: .pi / 4)
     }
     
 }

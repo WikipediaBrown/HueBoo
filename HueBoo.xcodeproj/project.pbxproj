@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23482A172ED2AE9AEEE1B86C /* Pods_HueBoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94658235BD3E8ED7F20E492D /* Pods_HueBoo.framework */; };
-		5BB27805233715F00001FB46 /* HueBooLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB27804233715F00001FB46 /* HueBooLogo.swift */; };
+		5BB27805233715F00001FB46 /* HueBooLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB27804233715F00001FB46 /* HueBooLabel.swift */; };
 		5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */; };
 		5BC9BDA6233237FE0028AC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA5233237FE0028AC29 /* Assets.xcassets */; };
 		5BC9BDA9233237FE0028AC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA7233237FE0028AC29 /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		28748C5D539C6B5177C28C9B /* Pods_HueBooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HueBooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BB27804233715F00001FB46 /* HueBooLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooLogo.swift; sourceTree = "<group>"; };
+		5BB27804233715F00001FB46 /* HueBooLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooLabel.swift; sourceTree = "<group>"; };
 		5BC9BD9B233237FD0028AC29 /* HueBoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueBoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC9BDA5233237FE0028AC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		5BC9BDC5233238A10028AC29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5BB27804233715F00001FB46 /* HueBooLogo.swift */,
+				5BB27804233715F00001FB46 /* HueBooLabel.swift */,
 				5BC9BDCC233238F30028AC29 /* PrimaryLabel.swift */,
 				5BC9BDCE233239020028AC29 /* RootCollectionView.swift */,
 				5BC9BDD0233239100028AC29 /* RootCell.swift */,
@@ -365,7 +365,7 @@
 				5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */,
 				5BC9BDC1233238610028AC29 /* RootViewController.swift in Sources */,
 				5BC9BDC7233238C10028AC29 /* ColorManager.swift in Sources */,
-				5BB27805233715F00001FB46 /* HueBooLogo.swift in Sources */,
+				5BB27805233715F00001FB46 /* HueBooLabel.swift in Sources */,
 				5BC9BDC9233238D20028AC29 /* ColorSet.swift in Sources */,
 				5BC9BDD1233239100028AC29 /* RootCell.swift in Sources */,
 				5BC9BDCB233238E20028AC29 /* Constants.swift in Sources */,
