@@ -21,11 +21,21 @@ or alternatively using `brew cask install fastlane`
 fastlane ios test
 ```
 Unit Test HueBoo.
+### ios appstore
+```
+fastlane ios appstore
+```
+Send HueBoo to AppStore.
 ### ios testflight
 ```
 fastlane ios testflight
 ```
 Send HueBoo to TestFlight.
+### ios build_for_apple_distribution
+```
+fastlane ios build_for_apple_distribution
+```
+Build for either TestFlight or AppStore
 ### ios match_with_options
 ```
 fastlane ios match_with_options

@@ -29,7 +29,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        listener?.onHeroTile()
+        listener?.onHeroTile()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -59,12 +59,11 @@ class RootCollectionView: UICollectionView {
         
         NSLayoutConstraint.activate([
             hueBooLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            hueBooLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: -80),
+            hueBooLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
             hueBooLabel.heightAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoHeight),
             hueBooLabel.widthAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoWidth)
         ])
         
-//        hueBooLabel.transform = CGAffineTransform(rotationAngle: .pi / 4)
     }
     
 }
