@@ -10,6 +10,6 @@
 
 clean(true)
 
-output_directory("./")
-
 scheme("HueBoo")
+
+workspace("HueBoo.xcworkspace")
