@@ -17,7 +17,7 @@ struct Constants {
         static let standardMargin: CGFloat = 8
         static let cellPadding: CGFloat = 6
         static let primaryLabelFontSize: CGFloat = 43
-        static let hueBooLogoFontSize: CGFloat = 68
+        static let hueBooLogoFontSize: CGFloat = 75
         static let hueBooLogoHeight: CGFloat = UIScreen.main.bounds.height
         static let hueBooLogoWidth: CGFloat = UIScreen.main.bounds.width
     }

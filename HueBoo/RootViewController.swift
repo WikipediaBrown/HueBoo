@@ -17,10 +17,13 @@ protocol RootPresentableListener: class {
 class RootViewController: UIViewController, RootPresentable, RootCollectionViewListening {
     
     private let collectionView: RootCollectionView = RootCollectionView()
-    
+    private let hueBooLabel = HueBooLabel()
+
     private var statusBarStyle: UIStatusBarStyle?
     
     weak var listener: RootPresentableListener?
+    
+    var hasAppeared: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listener?.onHeroTile()
+//        showFirstItem()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -50,6 +53,11 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     }
     
     func onTap() {
+        if hueBooLabel.alpha != 0 {
+            UIView.animate(withDuration: 0.2) { [weak self] in
+                self?.hueBooLabel.alpha = 0
+            }
+        }
         listener?.onHeroTile()
     }
     
@@ -69,10 +77,21 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     }
     
     private func setupViews() {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
+        gradientLayer.frame = UIScreen.main.bounds
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.type = .radial
+        
+        view.layer.insertSublayer(gradientLayer, at: 0)
 
         collectionView.listener = self
         collectionView.backgroundColor = .clear
         
+        view.addSubview(hueBooLabel)
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -82,6 +101,22 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
             collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ])
         
+        NSLayoutConstraint.activate([
+            hueBooLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            hueBooLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 25),
+            hueBooLabel.heightAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoHeight),
+            hueBooLabel.widthAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoWidth)
+        ])
+        
+    }
+    
+    private func showFirstItem() {
+        if hasAppeared == false {
+            hasAppeared = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+                self?.listener?.onHeroTile()
+            }
+        }
     }
     
 }

@@ -32,7 +32,7 @@ class RootCell: UICollectionViewCell {
         guard let colorSet = colorSet else { return }
         let color = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha)
         let textColor = Constants.getTextColor(from: color)
-        
+        print(toRGBString(from: color))
         backgroundColor = color
         hexLabel.textColor = textColor
         hexLabel.text = toHexString(from: color)
