@@ -23,14 +23,14 @@ platform :ios do
   end
 
   desc "Send HueBoo to AppStore."
-  lane :appstore do
+  lane :release_to_appstore do
+    
     build_for_apple_distribution
   end
 
   desc "Send HueBoo to TestFlight."
-  lane :testflight do
+  lane :release_to_testflight do
     build_for_apple_distribution
-    desc "{lane_context[SharedValues: IPA_OUTPUT_PATH]}"
     pilot(
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}"
@@ -42,7 +42,7 @@ platform :ios do
     match_with_options(type: "appstore")
     increment_build_number(build_number: Date.today.to_time.to_i)
     gym(
-      output_directory: "appStore_build",
+      output_directory: "apple_build",
       export_method: "app-store"
     )
   end

@@ -73,7 +73,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
-.appStore_build/
+.apple_build/
 
 # Code Injection
 #
