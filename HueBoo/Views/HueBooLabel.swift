@@ -17,8 +17,9 @@ class HueBooLabel: UILabel {
         text = "HueBoo"
         textAlignment = .center
         textColor = .white
-        transform = CGAffineTransform(rotationAngle: .pi / -4)
+        transform = CGAffineTransform(rotationAngle: .pi / -6)
         translatesAutoresizingMaskIntoConstraints = false
+
     }
     
     required init?(coder aDecoder: NSCoder) {

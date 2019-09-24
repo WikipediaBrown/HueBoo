@@ -16,8 +16,41 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
+
+  desc "Unit Test HueBoo."
+  lane :test do
     # add actions here: https://docs.fastlane.tools/actions
   end
+
+  desc "Send HueBoo to AppStore."
+  lane :release_to_appstore do
+    
+    build_for_apple_distribution
+  end
+
+  desc "Send HueBoo to TestFlight."
+  lane :release_to_testflight do
+    build_for_apple_distribution
+    pilot(
+      skip_waiting_for_build_processing: false,
+      changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}"
+    )
+  end
+
+  desc "Build for either TestFlight or AppStore"
+  lane :build_for_apple_distribution do
+    match_with_options(type: "appstore")
+    increment_build_number(build_number: Date.today.to_time.to_i)
+    gym(
+      output_directory: "apple_build",
+      export_method: "app-store"
+    )
+  end
+
+  desc "Resolve Signing Certificates and Provisioning Profiles."
+  lane :match_with_options do |options|
+    matchType = options[:type]
+    match(type: matchType, readonly: true)
+  end
+
 end
