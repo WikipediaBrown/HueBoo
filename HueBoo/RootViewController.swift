@@ -32,7 +32,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        showFirstItem()
+        showFirstItem()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
