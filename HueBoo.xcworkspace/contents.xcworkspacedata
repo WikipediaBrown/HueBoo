@@ -11,6 +11,9 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:fastlane">
+   </FileRef>
+   <FileRef
       location = "group:HueBoo.xcodeproj">
    </FileRef>
    <FileRef

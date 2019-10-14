@@ -17,15 +17,10 @@ default_platform(:ios)
 
 platform :ios do
 
-  desc "Unit Test HueBoo."
-  lane :test do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
-
   desc "Send HueBoo to AppStore."
   lane :release_to_appstore do
-    
     build_for_apple_distribution
+    get_screenshots
   end
 
   desc "Send HueBoo to TestFlight."
@@ -39,6 +34,7 @@ platform :ios do
 
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do
+    precheck
     match_with_options(type: "appstore")
     increment_build_number(build_number: Date.today.to_time.to_i)
     gym(
@@ -51,6 +47,17 @@ platform :ios do
   lane :match_with_options do |options|
     matchType = options[:type]
     match(type: matchType, readonly: true)
+  end
+
+  desc "Unit Test HueBoo."
+  lane :test do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+  desc "Create Screenshots of HueBoo."
+  lane :get_screenshots do
+    # snapshot
+    frameit(path: "./docs", rose_gold: true)
   end
 
 end

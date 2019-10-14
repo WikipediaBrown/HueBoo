@@ -18,10 +18,21 @@ class HueBooSnapshots: XCTestCase {
 
     func testSnapshots() {
         
-        let element = XCUIApplication().collectionViews.cells.children(matching: .other).element
-        element.tap()
-        element.tap()
-        element.tap()
+        let cellOne = XCUIApplication().cells["New Hue Number 1"]
+        guard cellOne.waitForExistence(timeout: 5) == true else { XCTAssertTrue(false); return }
+        snapshot("Color 1")
+        cellOne.tap()
         
+        let cellTwo = XCUIApplication().cells["New Hue Number 2"]
+        guard cellTwo.waitForExistence(timeout: 5) == true else { XCTAssertTrue(false); return }
+        snapshot("Color 2")
+        cellTwo.tap()
+        
+        let cellThree = XCUIApplication().cells["New Hue Number 3"]
+        guard cellThree.waitForExistence(timeout: 5) == true else { XCTAssertTrue(false); return }
+        snapshot("Color 3")
+        cellThree.tap()
+        
+        snapshot("Color 4")
     }
 }

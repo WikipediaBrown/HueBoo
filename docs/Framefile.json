@@ -1,0 +1,12 @@
+{
+    "device_frame_version": "latest",
+    "default": {
+        "keyword": { "font": "./fonts/helvetica.ttf" },
+        "title": { "color": "#F5F5F5" },
+        "padding": 50,
+        "title_below_image": false,
+        "background": "./background.jpg",
+        "show_complete_frame": true
+    },
+    "data": []
+}

@@ -65,7 +65,7 @@ class RootCell: UICollectionViewCell {
     
     private func updateAccessiblility(withHex hexString: String, andRGB rgbString: String) {
         accessibilityTraits = .button
-        accessibilityLabel = "New Hue"
+        accessibilityLabel = "New Hue Number \(tag + 1)"
         accessibilityValue = "Hexidecimal value is \(hexString) and the RGB value is \(rgbString)"
         isAccessibilityElement = true
     }

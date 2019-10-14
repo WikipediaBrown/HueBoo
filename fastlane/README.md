@@ -16,19 +16,14 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios test
+### ios release_to_appstore
 ```
-fastlane ios test
-```
-Unit Test HueBoo.
-### ios appstore
-```
-fastlane ios appstore
+fastlane ios release_to_appstore
 ```
 Send HueBoo to AppStore.
-### ios testflight
+### ios release_to_testflight
 ```
-fastlane ios testflight
+fastlane ios release_to_testflight
 ```
 Send HueBoo to TestFlight.
 ### ios build_for_apple_distribution
@@ -41,6 +36,16 @@ Build for either TestFlight or AppStore
 fastlane ios match_with_options
 ```
 Resolve Signing Certificates and Provisioning Profiles.
+### ios test
+```
+fastlane ios test
+```
+Unit Test HueBoo.
+### ios get_screenshots
+```
+fastlane ios get_screenshots
+```
+Create Screenshots of HueBoo.
 
 ----
 
