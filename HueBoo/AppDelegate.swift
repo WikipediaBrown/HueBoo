@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = interactor?.presenter as? UIViewController
         window?.makeKeyAndVisible()
+        
         return true
         
     }
     
 }
-

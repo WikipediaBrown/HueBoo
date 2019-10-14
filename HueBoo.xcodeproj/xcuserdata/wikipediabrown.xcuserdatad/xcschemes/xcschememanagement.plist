@@ -9,6 +9,34 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Snapshots.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5BC9BD9A233237FD0028AC29</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BC9BDAE233237FE0028AC29</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BE58F80233B26F9008A8BEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BE58F8E233B273B008A8BEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

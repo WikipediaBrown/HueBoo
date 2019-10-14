@@ -32,12 +32,14 @@ class RootCell: UICollectionViewCell {
         guard let colorSet = colorSet else { return }
         let color = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha)
         let textColor = Constants.getTextColor(from: color)
-        print(toRGBString(from: color))
+        let hexString = toHexString(from: color)
+        let rgbString = toRGBString(from: color)
         backgroundColor = color
         hexLabel.textColor = textColor
-        hexLabel.text = toHexString(from: color)
+        hexLabel.text = hexString
         rgbLabel.textColor = textColor
-        rgbLabel.text = toRGBString(from: color)
+        rgbLabel.text = rgbString
+        updateAccessiblility(withHex: hexString, andRGB: rgbString)
     }
     
     @objc
@@ -59,6 +61,13 @@ class RootCell: UICollectionViewCell {
             rgbLabel.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
             rgbLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
             ])
+    }
+    
+    private func updateAccessiblility(withHex hexString: String, andRGB rgbString: String) {
+        accessibilityTraits = .button
+        accessibilityLabel = "New Hue"
+        accessibilityValue = "Hexidecimal value is \(hexString) and the RGB value is \(rgbString)"
+        isAccessibilityElement = true
     }
     
 }

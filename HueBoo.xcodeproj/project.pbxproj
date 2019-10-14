@@ -25,11 +25,28 @@
 		5BC9BDD5233239300028AC29 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD4233239300028AC29 /* Fixtures.swift */; };
 		5BC9BDD72332393E0028AC29 /* RootInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */; };
 		5BC9BDD923323B250028AC29 /* ColorManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */; };
+		5BE58F84233B26F9008A8BEE /* HueBooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE58F83233B26F9008A8BEE /* HueBooUITests.swift */; };
+		5BE58F92233B273B008A8BEE /* HueBooSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE58F91233B273B008A8BEE /* HueBooSnapshots.swift */; };
+		5BE58F9A233B27BC008A8BEE /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE58F99233B27BC008A8BEE /* SnapshotHelper.swift */; };
 		DB8BB6C25C015C8DA404D1D1 /* Pods_HueBooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28748C5D539C6B5177C28C9B /* Pods_HueBooTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5BC9BDB0233237FE0028AC29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BC9BD93233237FD0028AC29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC9BD9A233237FD0028AC29;
+			remoteInfo = HueBoo;
+		};
+		5BE58F86233B26F9008A8BEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BC9BD93233237FD0028AC29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC9BD9A233237FD0028AC29;
+			remoteInfo = HueBoo;
+		};
+		5BE58F94233B273B008A8BEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5BC9BD93233237FD0028AC29 /* Project object */;
 			proxyType = 1;
@@ -61,6 +78,13 @@
 		5BC9BDD4233239300028AC29 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		5BC9BDD62332393E0028AC29 /* RootInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorTests.swift; sourceTree = "<group>"; };
 		5BC9BDD823323B250028AC29 /* ColorManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManagerTests.swift; sourceTree = "<group>"; };
+		5BE58F81233B26F9008A8BEE /* HueBooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HueBooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE58F83233B26F9008A8BEE /* HueBooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooUITests.swift; sourceTree = "<group>"; };
+		5BE58F85233B26F9008A8BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE58F8F233B273B008A8BEE /* HueBooSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HueBooSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE58F91233B273B008A8BEE /* HueBooSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooSnapshots.swift; sourceTree = "<group>"; };
+		5BE58F93233B273B008A8BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE58F99233B27BC008A8BEE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		7C551C6C776E4A9DEE39B41B /* Pods-HueBoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBoo.release.xcconfig"; path = "Target Support Files/Pods-HueBoo/Pods-HueBoo.release.xcconfig"; sourceTree = "<group>"; };
 		94658235BD3E8ED7F20E492D /* Pods_HueBoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HueBoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCFF23209C0AB396F3ECC6E /* Pods-HueBooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HueBooTests.debug.xcconfig"; path = "Target Support Files/Pods-HueBooTests/Pods-HueBooTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +109,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BE58F7E233B26F9008A8BEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE58F8C233B273B008A8BEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +131,8 @@
 			children = (
 				5BC9BD9D233237FD0028AC29 /* HueBoo */,
 				5BC9BDB2233237FE0028AC29 /* HueBooTests */,
+				5BE58F82233B26F9008A8BEE /* HueBooUITests */,
+				5BE58F90233B273B008A8BEE /* HueBooSnapshots */,
 				5BC9BD9C233237FD0028AC29 /* Products */,
 				A0F5C02DE97E69C0A82C5451 /* Pods */,
 				91D5CFB633A1B10461A2B67A /* Frameworks */,
@@ -104,6 +144,8 @@
 			children = (
 				5BC9BD9B233237FD0028AC29 /* HueBoo.app */,
 				5BC9BDAF233237FE0028AC29 /* HueBooTests.xctest */,
+				5BE58F81233B26F9008A8BEE /* HueBooUITests.xctest */,
+				5BE58F8F233B273B008A8BEE /* HueBooSnapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +215,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5BE58F82233B26F9008A8BEE /* HueBooUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BE58F83233B26F9008A8BEE /* HueBooUITests.swift */,
+				5BE58F85233B26F9008A8BEE /* Info.plist */,
+			);
+			path = HueBooUITests;
+			sourceTree = "<group>";
+		};
+		5BE58F90233B273B008A8BEE /* HueBooSnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				5BE58F91233B273B008A8BEE /* HueBooSnapshots.swift */,
+				5BE58F99233B27BC008A8BEE /* SnapshotHelper.swift */,
+				5BE58F93233B273B008A8BEE /* Info.plist */,
+			);
+			path = HueBooSnapshots;
+			sourceTree = "<group>";
+		};
 		91D5CFB633A1B10461A2B67A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,13 +295,49 @@
 			productReference = 5BC9BDAF233237FE0028AC29 /* HueBooTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BE58F80233B26F9008A8BEE /* HueBooUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BE58F8A233B26F9008A8BEE /* Build configuration list for PBXNativeTarget "HueBooUITests" */;
+			buildPhases = (
+				5BE58F7D233B26F9008A8BEE /* Sources */,
+				5BE58F7E233B26F9008A8BEE /* Frameworks */,
+				5BE58F7F233B26F9008A8BEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BE58F87233B26F9008A8BEE /* PBXTargetDependency */,
+			);
+			name = HueBooUITests;
+			productName = HueBooUITests;
+			productReference = 5BE58F81233B26F9008A8BEE /* HueBooUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		5BE58F8E233B273B008A8BEE /* HueBooSnapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BE58F96233B273B008A8BEE /* Build configuration list for PBXNativeTarget "HueBooSnapshots" */;
+			buildPhases = (
+				5BE58F8B233B273B008A8BEE /* Sources */,
+				5BE58F8C233B273B008A8BEE /* Frameworks */,
+				5BE58F8D233B273B008A8BEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BE58F95233B273B008A8BEE /* PBXTargetDependency */,
+			);
+			name = HueBooSnapshots;
+			productName = HueBooSnapshots;
+			productReference = 5BE58F8F233B273B008A8BEE /* HueBooSnapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5BC9BD93233237FD0028AC29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = IamGoodBad;
 				TargetAttributes = {
@@ -249,6 +346,14 @@
 					};
 					5BC9BDAE233237FE0028AC29 = {
 						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 5BC9BD9A233237FD0028AC29;
+					};
+					5BE58F80233B26F9008A8BEE = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 5BC9BD9A233237FD0028AC29;
+					};
+					5BE58F8E233B273B008A8BEE = {
+						CreatedOnToolsVersion = 11.0;
 						TestTargetID = 5BC9BD9A233237FD0028AC29;
 					};
 				};
@@ -268,6 +373,8 @@
 			targets = (
 				5BC9BD9A233237FD0028AC29 /* HueBoo */,
 				5BC9BDAE233237FE0028AC29 /* HueBooTests */,
+				5BE58F80233B26F9008A8BEE /* HueBooUITests */,
+				5BE58F8E233B273B008A8BEE /* HueBooSnapshots */,
 			);
 		};
 /* End PBXProject section */
@@ -284,6 +391,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5BC9BDAD233237FE0028AC29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE58F7F233B26F9008A8BEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE58F8D233B273B008A8BEE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -385,6 +506,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BE58F7D233B26F9008A8BEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE58F84233B26F9008A8BEE /* HueBooUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE58F8B233B273B008A8BEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE58F92233B273B008A8BEE /* HueBooSnapshots.swift in Sources */,
+				5BE58F9A233B27BC008A8BEE /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -392,6 +530,16 @@
 			isa = PBXTargetDependency;
 			target = 5BC9BD9A233237FD0028AC29 /* HueBoo */;
 			targetProxy = 5BC9BDB0233237FE0028AC29 /* PBXContainerItemProxy */;
+		};
+		5BE58F87233B26F9008A8BEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC9BD9A233237FD0028AC29 /* HueBoo */;
+			targetProxy = 5BE58F86233B26F9008A8BEE /* PBXContainerItemProxy */;
+		};
+		5BE58F95233B273B008A8BEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BC9BD9A233237FD0028AC29 /* HueBoo */;
+			targetProxy = 5BE58F94233B273B008A8BEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -609,6 +757,86 @@
 			};
 			name = Release;
 		};
+		5BE58F88233B26F9008A8BEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AM5US9G8B;
+				INFOPLIST_FILE = HueBooUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.HueBooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HueBoo;
+			};
+			name = Debug;
+		};
+		5BE58F89233B26F9008A8BEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AM5US9G8B;
+				INFOPLIST_FILE = HueBooUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.HueBooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HueBoo;
+			};
+			name = Release;
+		};
+		5BE58F97233B273B008A8BEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AM5US9G8B;
+				INFOPLIST_FILE = HueBooSnapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.HueBooSnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HueBoo;
+			};
+			name = Debug;
+		};
+		5BE58F98233B273B008A8BEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AM5US9G8B;
+				INFOPLIST_FILE = HueBooSnapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.HueBooSnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HueBoo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -635,6 +863,24 @@
 			buildConfigurations = (
 				5BC9BDBC233237FE0028AC29 /* Debug */,
 				5BC9BDBD233237FE0028AC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BE58F8A233B26F9008A8BEE /* Build configuration list for PBXNativeTarget "HueBooUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BE58F88233B26F9008A8BEE /* Debug */,
+				5BE58F89233B26F9008A8BEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BE58F96233B273B008A8BEE /* Build configuration list for PBXNativeTarget "HueBooSnapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BE58F97233B273B008A8BEE /* Debug */,
+				5BE58F98233B273B008A8BEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

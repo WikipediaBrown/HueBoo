@@ -13,6 +13,7 @@ class PrimaryLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         font = UIFont.systemFont(ofSize: Constants.CGFloats.primaryLabelFontSize)
+        isAccessibilityElement = false
         numberOfLines = 0
         textAlignment = .center
         translatesAutoresizingMaskIntoConstraints = false
