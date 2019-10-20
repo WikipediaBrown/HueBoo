@@ -20,7 +20,24 @@ platform :ios do
   desc "Send HueBoo to AppStore."
   lane :release_to_appstore do
     build_for_apple_distribution
-    get_screenshots
+    deliver(
+      automatic_release: true,
+      force: true,
+      overwrite_screenshots: true,
+      reject_if_possible: true,
+      run_precheck_before_submit: false,
+      screenshots_path: "./docs",
+      submit_for_review: true,
+      submission_information: {
+        export_compliance_platform: 'ios',
+        export_compliance_compliance_required: false,
+        export_compliance_encryption_updated: false,
+        export_compliance_uses_encryption: false,
+        export_compliance_contains_third_party_cryptography: false,
+        export_compliance_contains_proprietary_cryptography: false,
+        export_compliance_available_on_french_store: false
+      }
+    )
   end
 
   desc "Send HueBoo to TestFlight."
@@ -34,9 +51,12 @@ platform :ios do
 
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do
-    precheck
+    # precheck
+    # unit_test
+    # ui_test
+    # create_screenshots
     match_with_options(type: "appstore")
-    increment_build_number(build_number: Date.today.to_time.to_i)
+    increment_build_number(build_number: Time.now.to_i)
     gym(
       output_directory: "apple_build",
       export_method: "app-store"
@@ -49,15 +69,20 @@ platform :ios do
     match(type: matchType, readonly: true)
   end
 
-  desc "Unit Test HueBoo."
-  lane :test do
-    # add actions here: https://docs.fastlane.tools/actions
+  desc "Create and Frame Screenshots of HueBoo."
+  lane :create_screenshots do
+    snapshot
+    frameit(path: "./docs", rose_gold: true)
   end
 
-  desc "Create Screenshots of HueBoo."
-  lane :get_screenshots do
-    # snapshot
-    frameit(path: "./docs", rose_gold: true)
+  desc "Unit Test HueBoo."
+  lane :unit_test do
+    scan(only_testing: "HueBooTests")
+  end
+
+  desc "UI Test HueBoo."
+  lane :ui_test do
+    scan(only_testing: "HueBooUITests")
   end
 
 end

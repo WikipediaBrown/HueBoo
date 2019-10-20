@@ -36,16 +36,21 @@ Build for either TestFlight or AppStore
 fastlane ios match_with_options
 ```
 Resolve Signing Certificates and Provisioning Profiles.
-### ios test
+### ios create_screenshots
 ```
-fastlane ios test
+fastlane ios create_screenshots
+```
+Create and Frame Screenshots of HueBoo.
+### ios unit_test
+```
+fastlane ios unit_test
 ```
 Unit Test HueBoo.
-### ios get_screenshots
+### ios ui_test
 ```
-fastlane ios get_screenshots
+fastlane ios ui_test
 ```
-Create Screenshots of HueBoo.
+UI Test HueBoo.
 
 ----
 

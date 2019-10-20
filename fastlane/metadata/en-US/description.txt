@@ -1,0 +1,1 @@
+HueBoo is a random color generator. Tap the screen and get a random color. 

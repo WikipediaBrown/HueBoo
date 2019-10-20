@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import UIKit
 @testable import HueBoo
 
 class RootInteractorTests: XCTestCase {

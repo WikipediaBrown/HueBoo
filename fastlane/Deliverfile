@@ -1,0 +1,7 @@
+# The Deliverfile allows you to store various App Store Connect metadata
+# For more information, check out the docs
+# https://docs.fastlane.tools/actions/deliver/
+
+ignore_language_directory_validation(true)
+ipa("./apple_build/HueBoo.ipa")
+# metadata_path("./metadata")
