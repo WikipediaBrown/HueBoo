@@ -8,5 +8,6 @@
 
 clean(true)
 device("iPhone 11 Pro")
+output_directory("./docs")
 scheme("HueBoo")
 skip_build(true)

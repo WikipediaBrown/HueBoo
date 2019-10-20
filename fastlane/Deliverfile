@@ -3,5 +3,5 @@
 # https://docs.fastlane.tools/actions/deliver/
 
 ignore_language_directory_validation(true)
-ipa("./apple_build/HueBoo.ipa")
+ipa("./fastlane/apple_build/HueBoo.ipa")
 # metadata_path("./metadata")

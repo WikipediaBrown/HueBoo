@@ -44,8 +44,11 @@ platform :ios do
   lane :release_to_testflight do
     build_for_apple_distribution
     pilot(
+      ipa: "./fastlane/apple_build/HueBoo.ipa",
       skip_waiting_for_build_processing: false,
-      changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}"
+      changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
+      reject_build_waiting_for_review: true,
+      uses_non_exempt_encryption: false
     )
   end
 
@@ -58,7 +61,7 @@ platform :ios do
     match_with_options(type: "appstore")
     increment_build_number(build_number: Time.now.to_i)
     gym(
-      output_directory: "apple_build",
+      output_directory: "./fastlane/apple_build",
       export_method: "app-store"
     )
   end
