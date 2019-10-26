@@ -34,4 +34,36 @@ struct ColorSet: Equatable {
         self.alpha = alpha
     }
     
+    func getColorScheme(from colorSheme: ColorScheme) -> [ColorSet] {
+        switch colorSheme {
+        case .monochromatic:
+            return getMonochromaticScheme()
+        }
+    }
+    
+    private func getMonochromaticScheme() -> [ColorSet] {
+        let colorOne = self
+        let colorTwo = ColorSet(hue: hue, saturation: getSaturation(0.2), brightness: brightness)
+        let colorThree = ColorSet(hue: hue, saturation: getSaturation(0.2), brightness: brightness)
+        let colorFour = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.2))
+        let colorFive = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.2))
+        return [colorOne, colorTwo, colorThree, colorFour, colorFive]
+    }
+    
+    func getHue(_ offset: CGFloat) -> CGFloat {
+        return (hue + offset).truncatingRemainder(dividingBy: 1)
+    }
+    
+    func getSaturation(_ offset: CGFloat) -> CGFloat {
+        return (saturation + offset).truncatingRemainder(dividingBy: 1)
+    }
+    
+    func getBrightness(_ offset: CGFloat) -> CGFloat {
+        return (brightness + offset).truncatingRemainder(dividingBy: 1)
+    }
+    
+    func getAlpha(_ offset: CGFloat) -> CGFloat {
+        return (alpha + offset).truncatingRemainder(dividingBy: 1)
+    }
+    
 }

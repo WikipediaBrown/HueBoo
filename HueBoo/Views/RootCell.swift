@@ -57,20 +57,22 @@ class RootCell: UICollectionViewCell, PrimaryCellListener {
 
 extension RootCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return ColorCells.getCellCount(from: section)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return ColorCells.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.item {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrimaryCell.description(), for: indexPath)
-            if let cell = cell as? PrimaryCell {
-                cell.listener = self
-            }
-            return cell
+        let cell = ColorCells.setupCell(with: collectionView, and: indexPath)
+        switch cell {
+        case let cell as PrimaryCell:
+            cell.listener = self
         default:
-            return UICollectionViewCell()
+            break
         }
+        return cell
     }
 }
 
