@@ -39,34 +39,83 @@ struct ColorSet: Equatable {
     func getColorScheme() -> [ColorSet] {
         guard let colorScheme = colorScheme else { return [] }
         switch colorScheme {
+        case .analogous:
+            return getAnalogousScheme()
+        case .complementary:
+            return getComplementaryScheme()
         case .monochromatic:
             return getMonochromaticScheme()
+        case .splitComplementary:
+            return getSplitComplimentary()
+        case .triadic:
+            return getTriadicScheme()
+        case .tetradic:
+            return getTetradicScheme()
         }
     }
     
+    private func getAnalogousScheme() -> [ColorSet] {
+        let arc: CGFloat = 1/12
+        let colorOne = ColorSet(hue: getHue(-arc), saturation: saturation, brightness: brightness)
+        let colorTwo = ColorSet(hue: getHue(arc), saturation: saturation, brightness: brightness)
+        return [self, colorOne, colorTwo]
+    }
+    
+    private func getComplementaryScheme() -> [ColorSet] {
+        return [self, ColorSet(hue: getHue(0.5), saturation: saturation, brightness: brightness)]
+    }
+    
+    private func getSplitComplimentary() -> [ColorSet] {
+        let arc: CGFloat = 5/12
+        let colorOne = ColorSet(hue: getHue(-arc), saturation: saturation, brightness: brightness)
+        let colorTwo = ColorSet(hue: getHue(arc), saturation: saturation, brightness: brightness)
+        return [self, colorOne, colorTwo]
+    }
+    
     private func getMonochromaticScheme() -> [ColorSet] {
-        let colorOne = self
-        let colorTwo = ColorSet(hue: hue, saturation: getSaturation(0.2), brightness: brightness)
-        let colorThree = ColorSet(hue: hue, saturation: getSaturation(0.4), brightness: brightness)
-        let colorFour = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.2))
-        let colorFive = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.4))
-        return [colorOne, colorTwo, colorThree, colorFour, colorFive]
+        var colorSets: [ColorSet] = [self]
+        for index in 1..<5 {
+            let brightnessOffset = getBrightness(CGFloat(index) * 0.15)
+            colorSets.append(ColorSet(hue: hue, saturation: saturation, brightness: brightnessOffset))
+        }
+        return colorSets
+    }
+    
+    private func getTriadicScheme() -> [ColorSet] {
+        let arc: CGFloat = 1/3
+        let colorOne = ColorSet(hue: getHue(-arc), saturation: saturation, brightness: brightness)
+        let colorTwo = ColorSet(hue: getHue(arc), saturation: saturation, brightness: brightness)
+        return [self, colorOne, colorTwo]
+    }
+    
+    private func getTetradicScheme() -> [ColorSet] {
+        let colorOne: CGFloat = 12 / 12
+        let colorTwo: CGFloat = 1 / 12
+        let colorThree: CGFloat = 6 / 12
+        let colorFour: CGFloat = 7 / 12
+        
+        let one = ColorSet(hue: getHue(colorOne), saturation: saturation, brightness: brightness)
+        let two = ColorSet(hue: getHue(colorTwo), saturation: saturation, brightness: brightness)
+        let three = ColorSet(hue: getHue(colorThree), saturation: saturation, brightness: brightness)
+        let four = ColorSet(hue: getHue(colorFour), saturation: saturation, brightness: brightness)
+        
+        return [one, two, three, four]
     }
     
     private func getHue(_ offset: CGFloat) -> CGFloat {
-        return (hue + offset).truncatingRemainder(dividingBy: 1.1)
+        return (hue + offset).truncatingRemainder(dividingBy: 1)
     }
     
     private func getSaturation(_ offset: CGFloat) -> CGFloat {
-        return (saturation + offset).truncatingRemainder(dividingBy: 1.1)
+        let threshold: CGFloat = 0.3
+        let newSaturation = (saturation + offset).truncatingRemainder(dividingBy: 1)
+        return newSaturation > threshold ? newSaturation : threshold
     }
     
-    private func getBrightness(_ offset: CGFloat) -> CGFloat {
-        return (brightness + offset).truncatingRemainder(dividingBy: 1.1)
-    }
-    
-    private func getAlpha(_ offset: CGFloat) -> CGFloat {
-        return (alpha + offset).truncatingRemainder(dividingBy: 1.1)
+    private func getBrightness(_ offset: CGFloat, _ floor: CGFloat = 0.2) -> CGFloat {
+        let threshold: CGFloat = 0.2
+        let newBrightness = (brightness + offset).truncatingRemainder(dividingBy: 1)
+        return newBrightness > threshold ? newBrightness : threshold + offset
     }
     
 }

@@ -12,7 +12,11 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
     
     private let schemeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.adjustsFontSizeToFitWidth = true
+        label.lineBreakMode = .byWordWrapping
+        label.minimumScaleFactor = 0.01
+        label.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -58,7 +62,7 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
             schemeLabel.topAnchor.constraint(equalTo: topAnchor),
             schemeLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             schemeLabel.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
-            schemeLabel.rightAnchor.constraint(equalTo: rightAnchor)
+            schemeLabel.widthAnchor.constraint(equalToConstant: (Constants.CGFloats.colorSchemeCellHeight * 2) - 12)
         ])
         
         NSLayoutConstraint.activate([
@@ -71,7 +75,6 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
     
     private func add(colors colorSets: [ColorSet]) {
         for colorSet in colorSets {
-            let cgfloat = Constants.CGFloats.colorSchemeCellHeight
             let hue = colorSet.hue
             let saturation = colorSet.saturation
             let brightness = colorSet.brightness

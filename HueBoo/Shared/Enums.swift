@@ -24,7 +24,7 @@ enum ColorCells: CaseIterable {
     }
     
     static func getCellSize(for indexPath: IndexPath) -> CGSize {
-        guard indexPath.item < ColorCells.allCases.count else { return .zero }
+        guard indexPath.section < ColorCells.allCases.count else { return .zero }
         
         switch ColorCells.allCases[indexPath.section] {
         case .colorScheme:
@@ -35,7 +35,7 @@ enum ColorCells: CaseIterable {
     }
     
     static func setupCell(with collrctionView: UICollectionView, and indexPath: IndexPath) -> UICollectionViewCell {
-        guard indexPath.item < ColorCells.allCases.count else { return UICollectionViewCell() }
+        guard indexPath.section < ColorCells.allCases.count else { return UICollectionViewCell() }
         
         switch ColorCells.allCases[indexPath.section] {
         case .colorScheme:
@@ -48,8 +48,14 @@ enum ColorCells: CaseIterable {
 
 
 enum ColorScheme: String, CaseIterable {
-    case monochromatic = "Monochromatic"
     
+    case monochromatic = "Monochromatic"
+    case complementary = "Complementary"
+    case splitComplementary = "Split Complementary"
+    case analogous = "Analogous"
+    case triadic = "Triadic"
+    case tetradic = "Tetradic"
+
     static func getScheme(from index: Int) -> ColorScheme? {
         guard index < ColorScheme.allCases.count else { return nil }
         return ColorScheme.allCases[index]
