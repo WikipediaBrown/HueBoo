@@ -79,6 +79,13 @@ extension RootCell: UICollectionViewDataSource {
 extension RootCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? ColorSetDisplayable else { return }
+        colorSet?.colorScheme = ColorScheme.getScheme(from: indexPath.item)
         cell.display(colorSet: colorSet)
+    }
+}
+
+extension RootCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return ColorCells.getCellSize(for: indexPath)
     }
 }

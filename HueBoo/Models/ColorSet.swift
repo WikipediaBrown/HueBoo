@@ -15,6 +15,8 @@ struct ColorSet: Equatable {
     let brightness: CGFloat
     let alpha: CGFloat
     
+    var colorScheme: ColorScheme?
+    
     init(initialColor: UIColor) {
         var hue: CGFloat = 0
         var saturation: CGFloat = 0
@@ -34,8 +36,9 @@ struct ColorSet: Equatable {
         self.alpha = alpha
     }
     
-    func getColorScheme(from colorSheme: ColorScheme) -> [ColorSet] {
-        switch colorSheme {
+    func getColorScheme() -> [ColorSet] {
+        guard let colorScheme = colorScheme else { return [] }
+        switch colorScheme {
         case .monochromatic:
             return getMonochromaticScheme()
         }
@@ -44,26 +47,26 @@ struct ColorSet: Equatable {
     private func getMonochromaticScheme() -> [ColorSet] {
         let colorOne = self
         let colorTwo = ColorSet(hue: hue, saturation: getSaturation(0.2), brightness: brightness)
-        let colorThree = ColorSet(hue: hue, saturation: getSaturation(0.2), brightness: brightness)
+        let colorThree = ColorSet(hue: hue, saturation: getSaturation(0.4), brightness: brightness)
         let colorFour = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.2))
-        let colorFive = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.2))
+        let colorFive = ColorSet(hue: hue, saturation: saturation, brightness: getSaturation(0.4))
         return [colorOne, colorTwo, colorThree, colorFour, colorFive]
     }
     
-    func getHue(_ offset: CGFloat) -> CGFloat {
-        return (hue + offset).truncatingRemainder(dividingBy: 1)
+    private func getHue(_ offset: CGFloat) -> CGFloat {
+        return (hue + offset).truncatingRemainder(dividingBy: 1.1)
     }
     
-    func getSaturation(_ offset: CGFloat) -> CGFloat {
-        return (saturation + offset).truncatingRemainder(dividingBy: 1)
+    private func getSaturation(_ offset: CGFloat) -> CGFloat {
+        return (saturation + offset).truncatingRemainder(dividingBy: 1.1)
     }
     
-    func getBrightness(_ offset: CGFloat) -> CGFloat {
-        return (brightness + offset).truncatingRemainder(dividingBy: 1)
+    private func getBrightness(_ offset: CGFloat) -> CGFloat {
+        return (brightness + offset).truncatingRemainder(dividingBy: 1.1)
     }
     
-    func getAlpha(_ offset: CGFloat) -> CGFloat {
-        return (alpha + offset).truncatingRemainder(dividingBy: 1)
+    private func getAlpha(_ offset: CGFloat) -> CGFloat {
+        return (alpha + offset).truncatingRemainder(dividingBy: 1.1)
     }
     
 }

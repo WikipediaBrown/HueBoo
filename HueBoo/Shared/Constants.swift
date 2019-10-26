@@ -20,9 +20,12 @@ struct Constants {
         static let hueBooLogoFontSize: CGFloat = 75
         static let hueBooLogoHeight: CGFloat = UIScreen.main.bounds.height
         static let hueBooLogoWidth: CGFloat = UIScreen.main.bounds.width
+        static let colorSchemeCellHeight: CGFloat = UIScreen.main.bounds.width / 6
     }
     struct CGSizes {
         static let screenSize: CGSize = UIScreen.main.bounds.size
+        static let primaryCellSize: CGSize = UIScreen.main.bounds.size
+        static let colorSchemeCellSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloats.colorSchemeCellHeight)
     }
     struct Strings {
         static let cannotParse: String = "Sorry, but we couldn't parse this color. We've already been notified so don't even trip dooooooog."

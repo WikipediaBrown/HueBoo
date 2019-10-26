@@ -23,6 +23,7 @@ class PrimaryCollectionView: UICollectionView {
         contentInsetAdjustmentBehavior = .never
         isPagingEnabled = true
         register(PrimaryCell.self, forCellWithReuseIdentifier: PrimaryCell.description())
+        register(ColorSchemeCell.self, forCellWithReuseIdentifier: ColorSchemeCell.description())
         translatesAutoresizingMaskIntoConstraints = false
     }
     
