@@ -47,17 +47,16 @@ platform :ios do
       ipa: "./fastlane/apple_build/HueBoo.ipa",
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
-      reject_build_waiting_for_review: true,
       uses_non_exempt_encryption: false
     )
   end
 
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do
-    # precheck
-    # unit_test
-    # ui_test
-    # create_screenshots
+    precheck
+    unit_test
+    ui_test
+    create_screenshots
     match_with_options(type: "appstore")
     increment_build_number(build_number: Time.now.to_i)
     gym(

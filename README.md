@@ -10,4 +10,5 @@ HueBoo allows you to generate random colors, and the hexidecimal & RGB values as
 
 # Releases
 
-I recommend that you clone from Master and deploy to
+I recommend that you clone from Master and create an app in [App Store Connect](https://appstoreconnect.apple.com "App Store Connect Homepage")
+ and using the [fastlane](https://www.fastlane.tools "fastlane's Homepage")

@@ -77,7 +77,7 @@ class RootViewController: UIViewController, RootPresentable, RootCollectionViewL
     }
     
     private func setupViews() {
-        
+
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
         gradientLayer.frame = UIScreen.main.bounds
