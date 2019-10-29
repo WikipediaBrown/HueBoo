@@ -18,7 +18,6 @@ class RootCell: UICollectionViewCell, PrimaryCellListener {
     
     private let collectionView = PrimaryCollectionView()
     private var colorSet: ColorSet?
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,8 +49,6 @@ class RootCell: UICollectionViewCell, PrimaryCellListener {
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: rightAnchor)
         ])
-        
-        
     }
 }
 

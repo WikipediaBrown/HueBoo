@@ -14,7 +14,7 @@ protocol RootPresentableListener: class {
     func onCountRequest() -> Int
 }
 
-class RootViewController: UIViewController, RootPresentable, RootCollectionViewListening {
+class RandomColorViewController: UIViewController, RootPresentable, RootCollectionViewListening {
     
     private let collectionView: RootCollectionView = RootCollectionView()
     private let hueBooLabel = HueBooLabel()

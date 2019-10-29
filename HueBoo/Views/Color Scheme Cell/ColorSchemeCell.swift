@@ -12,11 +12,8 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
     
     private let schemeLabel: UILabel = {
         let label = UILabel()
-        label.adjustsFontSizeToFitWidth = true
-        label.lineBreakMode = .byWordWrapping
-        label.minimumScaleFactor = 0.01
-        label.font = UIFont.systemFont(ofSize: 11, weight: .bold)
-        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -45,34 +42,6 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
         add(colors: colorSet.getColorScheme())
     }
     
-    private func resetCell() {
-        schemeLabel.text = nil
-        for view in schemeView.arrangedSubviews {
-            view.removeFromSuperview()
-        }
-    }
-    
-    private func setupViews() {
-        backgroundColor = .white
-        
-        addSubview(schemeLabel)
-        addSubview(schemeView)
-        
-        NSLayoutConstraint.activate([
-            schemeLabel.topAnchor.constraint(equalTo: topAnchor),
-            schemeLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            schemeLabel.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
-            schemeLabel.widthAnchor.constraint(equalToConstant: (Constants.CGFloats.colorSchemeCellHeight * 2) - 12)
-        ])
-        
-        NSLayoutConstraint.activate([
-            schemeView.topAnchor.constraint(equalTo: topAnchor),
-            schemeView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            schemeView.rightAnchor.constraint(equalTo: rightAnchor),
-            schemeView.widthAnchor.constraint(equalToConstant: Constants.CGFloats.colorSchemeCellHeight * 4)
-        ])
-    }
-    
     private func add(colors colorSets: [ColorSet]) {
         for colorSet in colorSets {
             let hue = colorSet.hue
@@ -85,4 +54,32 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
         }
     }
     
+    private func resetCell() {
+        schemeLabel.text = nil
+        for view in schemeView.arrangedSubviews {
+            view.removeFromSuperview()
+        }
+    }
+    
+    private func setupViews() {
+        backgroundColor = .white
+
+        addSubview(schemeLabel)
+        addSubview(schemeView)
+        
+        NSLayoutConstraint.activate([
+            schemeLabel.topAnchor.constraint(equalTo: topAnchor),
+            schemeLabel.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
+            schemeLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            schemeLabel.widthAnchor.constraint(equalToConstant: (Constants.CGFloats.colorSchemeCellHeight * 2) - 12)
+        ])
+
+        NSLayoutConstraint.activate([
+            schemeView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            schemeView.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
+            schemeView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            schemeView.widthAnchor.constraint(equalToConstant: (Constants.CGFloats.colorSchemeCellHeight * 4) - 12)
+        ])
+        
+    }
 }

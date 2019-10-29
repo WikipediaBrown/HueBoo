@@ -14,6 +14,10 @@
 		5B9C91F12363CEC500EA7839 /* ColorSchemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C91F02363CEC500EA7839 /* ColorSchemeCell.swift */; };
 		5B9C91F32363DE8F00EA7839 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C91F22363DE8F00EA7839 /* Enums.swift */; };
 		5BB27805233715F00001FB46 /* HueBooLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB27804233715F00001FB46 /* HueBooLabel.swift */; };
+		5BBAF45D236901A7009CFD35 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAF459236901A7009CFD35 /* RootRouter.swift */; };
+		5BBAF45E236901A7009CFD35 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAF45A236901A7009CFD35 /* RootViewController.swift */; };
+		5BBAF45F236901A7009CFD35 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAF45B236901A7009CFD35 /* RootBuilder.swift */; };
+		5BBAF460236901A7009CFD35 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAF45C236901A7009CFD35 /* RootInteractor.swift */; };
 		5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */; };
 		5BC9BDA6233237FE0028AC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA5233237FE0028AC29 /* Assets.xcassets */; };
 		5BC9BDA9233237FE0028AC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC9BDA7233237FE0028AC29 /* LaunchScreen.storyboard */; };
@@ -67,6 +71,10 @@
 		5B9C91F02363CEC500EA7839 /* ColorSchemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeCell.swift; sourceTree = "<group>"; };
 		5B9C91F22363DE8F00EA7839 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5BB27804233715F00001FB46 /* HueBooLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooLabel.swift; sourceTree = "<group>"; };
+		5BBAF459236901A7009CFD35 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		5BBAF45A236901A7009CFD35 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		5BBAF45B236901A7009CFD35 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		5BBAF45C236901A7009CFD35 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 		5BC9BD9B233237FD0028AC29 /* HueBoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueBoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC9BDA5233237FE0028AC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +159,17 @@
 			path = "Color Scheme Cell";
 			sourceTree = "<group>";
 		};
+		5BBAF4582369018C009CFD35 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				5BBAF45B236901A7009CFD35 /* RootBuilder.swift */,
+				5BBAF45C236901A7009CFD35 /* RootInteractor.swift */,
+				5BBAF459236901A7009CFD35 /* RootRouter.swift */,
+				5BBAF45A236901A7009CFD35 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		5BC9BD92233237FD0028AC29 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +197,7 @@
 		5BC9BD9D233237FD0028AC29 /* HueBoo */ = {
 			isa = PBXGroup;
 			children = (
+				5BBAF4582369018C009CFD35 /* Root */,
 				5BC9BD9E233237FD0028AC29 /* AppDelegate.swift */,
 				5BC9BDBE233238530028AC29 /* RootInteractor.swift */,
 				5BC9BDC0233238610028AC29 /* RootViewController.swift */,
@@ -511,15 +531,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC9BDBF233238530028AC29 /* RootInteractor.swift in Sources */,
+				5BBAF45D236901A7009CFD35 /* RootRouter.swift in Sources */,
 				5B9C91EB2363AD9900EA7839 /* PrimaryCollectionView.swift in Sources */,
 				5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */,
 				5B9C91F12363CEC500EA7839 /* ColorSchemeCell.swift in Sources */,
 				5B9C91F32363DE8F00EA7839 /* Enums.swift in Sources */,
+				5BBAF460236901A7009CFD35 /* RootInteractor.swift in Sources */,
+				5BBAF45E236901A7009CFD35 /* RootViewController.swift in Sources */,
 				5BC9BDC1233238610028AC29 /* RootViewController.swift in Sources */,
 				5B9C91EE2363B44200EA7839 /* PrimaryCell.swift in Sources */,
 				5BC9BDC7233238C10028AC29 /* ColorManager.swift in Sources */,
 				5BB27805233715F00001FB46 /* HueBooLabel.swift in Sources */,
 				5BC9BDC9233238D20028AC29 /* ColorSet.swift in Sources */,
+				5BBAF45F236901A7009CFD35 /* RootBuilder.swift in Sources */,
 				5BC9BDD1233239100028AC29 /* RootCell.swift in Sources */,
 				5BC9BDCB233238E20028AC29 /* Constants.swift in Sources */,
 				5BC9BDCF233239020028AC29 /* RootCollectionView.swift in Sources */,

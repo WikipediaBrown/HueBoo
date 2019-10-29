@@ -16,14 +16,15 @@ class PrimaryCollectionView: UICollectionView {
 
     init() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = Constants.CGSizes.screenSize
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
         layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         super.init(frame: .zero, collectionViewLayout: layout)
         contentInsetAdjustmentBehavior = .never
         isPagingEnabled = true
         register(PrimaryCell.self, forCellWithReuseIdentifier: PrimaryCell.description())
         register(ColorSchemeCell.self, forCellWithReuseIdentifier: ColorSchemeCell.description())
+        
         translatesAutoresizingMaskIntoConstraints = false
     }
     
