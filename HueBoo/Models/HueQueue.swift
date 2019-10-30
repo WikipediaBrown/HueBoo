@@ -38,7 +38,7 @@ struct HueQueue<T> {
         guard index < count else { return nil }
         return array[head + index]
     }
-    
+
     var front: T? { return isEmpty ? nil : array[head] }
-    var back: T? { return isEmpty ? nil : array[array.endIndex]}
+    var back: T? { return isEmpty ? nil : array[array.index(before: array.endIndex)]}
 }

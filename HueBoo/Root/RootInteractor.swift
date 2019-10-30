@@ -11,7 +11,8 @@ import RxSwift
 
 protocol RootRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
-    func routeTo(experience: Experience)
+    func prepare(experience: Experience)
+    func routeToInitialExperience()
 }
 
 protocol RootPresentable: Presentable {
@@ -41,11 +42,8 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        guard let colorSet = userDataManager.hueFor(index: 0) else { return }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2)  { [weak self] in
-            self?.presenter.present(initialColor: colorSet)
-        }
+        let experience = userDataManager.retrieveCurrentExperience()
+        router?.prepare(experience: experience)
         // TODO: Implement business logic here.
     }
 
@@ -54,9 +52,12 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         // TODO: Pause any business logic.
     }
     
+    func onInitial(colorSet: ColorSet) {
+        presenter.present(initialColor: colorSet)
+    }
+    
     func onCompletion() {
-        let experience = userDataManager.retrieveCurrentExperience()
-        router?.routeTo(experience: experience)
+        router?.routeToInitialExperience()
     }
     
 }

@@ -16,13 +16,7 @@ protocol RootDependency: Dependency {
 final class RootComponent: Component<RootDependency>, RandomHueDependency, SpecificHueDependency {
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
     lazy var colorManager: ColorManaging = ColorManager()
-    lazy var userDataManager: UserDataManaging = {
-        let manager = UserDataManager()
-        if manager.isEmpty {
-            manager.add(colorSet: colorManager.getRandomColor())
-        }
-        return manager
-    }()
+    lazy var userDataManager: UserDataManaging = UserDataManager()
 }
 
 // MARK: - Builder

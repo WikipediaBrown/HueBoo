@@ -30,7 +30,7 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func display(colorSet: ColorSet?) {
+    func display(colorSet: ColorSet?, as colorScheme: ColorScheme? = nil) {
         guard let colorSet = colorSet else { return }
         let color = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha)
         let textColor = Constants.getTextColor(from: color)

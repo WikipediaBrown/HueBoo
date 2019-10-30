@@ -12,6 +12,7 @@ protocol UserDataManaging {
     var count: Int { get }
     func add(colorSet: ColorSet)
     func hueFor(index: Int) -> ColorSet?
+    func recentHue() -> ColorSet?
     func retrieveCurrentExperience() -> Experience
     func retrieveQueue()
     func save(experience: Experience)
@@ -35,6 +36,10 @@ class UserDataManager: UserDataManaging {
         
     func hueFor(index: Int) -> ColorSet? {
         return hueQueue.element(at: index)
+    }
+    
+    func recentHue() -> ColorSet? {
+        return hueQueue.back
     }
     
     func retrieveQueue() {

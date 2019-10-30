@@ -55,7 +55,9 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     }
     
     func present(initialColor colorSet: ColorSet) {
-        initialColor = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha).cgColor
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2)  { [weak self] in
+            self?.initialColor = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha).cgColor
+        }
     }
 
     private func setupViews() {

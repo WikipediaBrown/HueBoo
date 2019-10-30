@@ -77,7 +77,7 @@ extension RootCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? ColorSetDisplayable else { return }
         let colorScheme = ColorScheme.getScheme(from: indexPath.item)
-        cell.display(colorSet: colorSet, as: colorScheme)
+        cell.display(colorSet: colorSet, as: colorScheme) 
     }
 }
 

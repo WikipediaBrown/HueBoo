@@ -20,6 +20,7 @@ protocol RandomHuePresentable: Presentable {
 }
 
 protocol RandomHueListener: class {
+    func onInitial(colorSet: ColorSet)
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
@@ -43,6 +44,7 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
+        getRecentHue()
     }
 
     override func willResignActive() {
@@ -64,5 +66,15 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
     
     func onCountRequest() -> Int {
         return userDataManager.count
+    }
+    
+    private func getRecentHue() {
+        if let colorSet = userDataManager.recentHue() {
+            listener?.onInitial(colorSet: colorSet)
+        } else {
+            userDataManager.add(colorSet: colorManager.getRandomColor())
+            guard let colorSet = userDataManager.recentHue() else { return }
+            listener?.onInitial(colorSet: colorSet)
+        }
     }
 }

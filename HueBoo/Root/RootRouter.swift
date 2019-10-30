@@ -20,8 +20,8 @@ protocol RootViewControllable: ViewControllable {
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
     
-    var currentRIB: Routing?
-    
+    var currentRIB: ViewableRouting?
+
     private var component: RootComponent
 
     // TODO: Constructor inject child builder protocols to allow building children.
@@ -31,25 +31,35 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         interactor.router = self
     }
     
-    func routeTo(experience: Experience) {
-        var router: ViewableRouting
+    func prepare(experience: Experience) {
+        if let currentRIB = currentRIB { detachChild(currentRIB) }
+        
         switch experience {
         case .randomHue:
-            router = RandomHueBuilder(dependency: component).build(withListener: interactor)
-            print("random")
+            currentRIB = RandomHueBuilder(dependency: component).build(withListener: interactor)
         case .specificHue:
-            router = SpecificHueBuilder(dependency: component).build(withListener: interactor)
-            print("specific")
+            currentRIB = SpecificHueBuilder(dependency: component).build(withListener: interactor)
         }
-        swapChildren(router: router)
+        
+        guard let router = currentRIB else { return }
+        attachChild(router)
     }
     
-    private func swapChildren(router: ViewableRouting) {
-        if let currentRIB = currentRIB {
-            detachChild(currentRIB)
-        }
-        attachChild(router)
+    func routeToInitialExperience() {
+        guard let router = currentRIB else { return }
         viewController.animateViewControllerReplacement(viewController: router.viewControllable.uiviewController)
-        currentRIB = router
     }
+    
+//    func routeTo(experience: Experience) {
+//        switch experience {
+//        case .randomHue:
+//            currentRIB = RandomHueBuilder(dependency: component).build(withListener: interactor)
+//            print("random")
+//        case .specificHue:
+//            currentRIB = SpecificHueBuilder(dependency: component).build(withListener: interactor)
+//            print("specific")
+//        }
+//        swapChildren(router: router)
+//    }
+
 }
