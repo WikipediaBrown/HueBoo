@@ -36,8 +36,7 @@ struct ColorSet: Equatable {
         self.alpha = alpha
     }
     
-    func getColorScheme() -> [ColorSet] {
-        guard let colorScheme = colorScheme else { return [] }
+    func get(colorScheme: ColorScheme) -> [ColorSet] {
         switch colorScheme {
         case .analogous:
             return getAnalogousScheme()

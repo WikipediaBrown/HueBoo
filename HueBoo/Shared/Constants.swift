@@ -28,7 +28,9 @@ struct Constants {
         static let colorSchemeCellSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloats.colorSchemeCellHeight)
     }
     struct Strings {
+        static let currentExperience = "CurrentExperience"
         static let cannotParse: String = "Sorry, but we couldn't parse this color. We've already been notified so don't even trip dooooooog."
+        static let queueName = "HueQueue"
     }
     
     static func getTextColor(from color: UIColor) -> UIColor {

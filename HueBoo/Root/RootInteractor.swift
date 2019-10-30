@@ -11,11 +11,13 @@ import RxSwift
 
 protocol RootRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeTo(experience: Experience)
 }
 
 protocol RootPresentable: Presentable {
-    var listener: RootPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
+    var listener: RootPresentableListener? { get set }
+    func present(initialColor colorSet: ColorSet)
 }
 
 protocol RootListener: class {
@@ -26,16 +28,24 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
 
     weak var router: RootRouting?
     weak var listener: RootListener?
-
+    
+    private let userDataManager: UserDataManaging
+    
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: RootPresentable) {
+    init(presenter: RootPresentable, userDataManager: UserDataManaging) {
+        self.userDataManager = userDataManager
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
+        guard let colorSet = userDataManager.hueFor(index: 0) else { return }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2)  { [weak self] in
+            self?.presenter.present(initialColor: colorSet)
+        }
         // TODO: Implement business logic here.
     }
 
@@ -43,4 +53,10 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func onCompletion() {
+        let experience = userDataManager.retrieveCurrentExperience()
+        router?.routeTo(experience: experience)
+    }
+    
 }

@@ -7,22 +7,23 @@
 //
 
 import Firebase
+import RIBs
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var interactor: RootInteractor?
+    private var launchRouter: LaunchRouting?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        FirebaseApp.configure()
-        interactor = RootInteractor(presenter: RootViewController(), colorManager: ColorManager())
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = interactor?.presenter as? UIViewController
-        window?.makeKeyAndVisible()
         
+        FirebaseApp.configure()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        launchRouter = RootBuilder(dependency: AppComponent()).build()
+        if let window = window {
+            launchRouter?.launchFromWindow(window)
+        }
         return true
         
     }

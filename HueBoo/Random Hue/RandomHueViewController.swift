@@ -1,29 +1,33 @@
 //
-//  RootViewController.swift
+//  RandomHueViewController.swift
 //  HueBoo
 //
-//  Created by Wikipedia Brown on 9/4/19.
+//  Created by Wikipedia Brown on 10/29/19.
 //  Copyright © 2019 IamGoodBad. All rights reserved.
 //
 
+import RIBs
+import RxSwift
 import UIKit
 
-protocol RootPresentableListener: class {
+protocol RandomHuePresentableListener: class {
+    // TODO: Declare properties and methods that the view controller can invoke to perform
+    // business logic, such as signIn(). This protocol is implemented by the corresponding
+    // interactor class.
     func onHeroTile()
     func colorSet(at indexPath: IndexPath) -> ColorSet?
     func onCountRequest() -> Int
 }
 
-class RandomColorViewController: UIViewController, RootPresentable, RootCollectionViewListening {
+final class RandomHueViewController: UIViewController, RandomHuePresentable, RandomHueViewControllable, RootCollectionViewListening {
+
+    weak var listener: RandomHuePresentableListener?
+        
+    var hasAppeared: Bool = false
     
     private let collectionView: RootCollectionView = RootCollectionView()
-    private let hueBooLabel = HueBooLabel()
-
+    
     private var statusBarStyle: UIStatusBarStyle?
-    
-    weak var listener: RootPresentableListener?
-    
-    var hasAppeared: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +57,6 @@ class RandomColorViewController: UIViewController, RootPresentable, RootCollecti
     }
     
     func onTap() {
-        if hueBooLabel.alpha != 0 {
-            UIView.animate(withDuration: 0.2) { [weak self] in
-                self?.hueBooLabel.alpha = 0
-            }
-        }
         listener?.onHeroTile()
     }
     
@@ -77,22 +76,12 @@ class RandomColorViewController: UIViewController, RootPresentable, RootCollecti
     }
     
     private func setupViews() {
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.purple.cgColor]
-        gradientLayer.frame = UIScreen.main.bounds
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.type = .radial
         
-        view.layer.insertSublayer(gradientLayer, at: 0)
-
         collectionView.listener = self
         collectionView.backgroundColor = .clear
         
-        view.addSubview(hueBooLabel)
         view.addSubview(collectionView)
+        view.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -101,23 +90,12 @@ class RandomColorViewController: UIViewController, RootPresentable, RootCollecti
             collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ])
         
-        NSLayoutConstraint.activate([
-            hueBooLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            hueBooLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 25),
-            hueBooLabel.heightAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoHeight),
-            hueBooLabel.widthAnchor.constraint(equalToConstant: Constants.CGFloats.hueBooLogoWidth)
-        ])
-        
     }
     
     private func showFirstItem() {
         if hasAppeared == false {
             hasAppeared = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-                self?.listener?.onHeroTile()
-            }
+            listener?.onHeroTile()
         }
     }
-    
 }
-

@@ -9,7 +9,11 @@
 import UIKit
 
 protocol ColorSetDisplayable {
-    func display(colorSet: ColorSet?)
+    func display(colorSet: ColorSet?, as colorScheme: ColorScheme?)
+}
+
+extension ColorSetDisplayable {
+    func display(colorSet: ColorSet?, as colorScheme: ColorScheme? = nil) {}
 }
 
 class PrimaryCollectionView: UICollectionView {

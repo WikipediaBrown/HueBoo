@@ -13,15 +13,22 @@ protocol RootDependency: Dependency {
     // created by this RIB.
 }
 
-final class RootComponent: Component<RootDependency> {
-
+final class RootComponent: Component<RootDependency>, RandomHueDependency, SpecificHueDependency {
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    lazy var colorManager: ColorManaging = ColorManager()
+    lazy var userDataManager: UserDataManaging = {
+        let manager = UserDataManager()
+        if manager.isEmpty {
+            manager.add(colorSet: colorManager.getRandomColor())
+        }
+        return manager
+    }()
 }
 
 // MARK: - Builder
 
 protocol RootBuildable: Buildable {
-    func build(withListener listener: RootListener) -> RootRouting
+    func build() -> LaunchRouting
 }
 
 final class RootBuilder: Builder<RootDependency>, RootBuildable {
@@ -30,11 +37,10 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: RootListener) -> RootRouting {
+    func build() -> LaunchRouting {
         let component = RootComponent(dependency: dependency)
         let viewController = RootViewController()
-        let interactor = RootInteractor(presenter: viewController)
-        interactor.listener = listener
-        return RootRouter(interactor: interactor, viewController: viewController)
+        let interactor = RootInteractor(presenter: viewController, userDataManager: component.userDataManager)
+        return RootRouter(interactor: interactor, viewController: viewController, component: component)
     }
 }

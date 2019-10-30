@@ -61,3 +61,27 @@ enum ColorScheme: String, CaseIterable {
         return ColorScheme.allCases[index]
     }
 }
+
+enum ColorApproximation {
+    case red
+    case orange
+    case yellow
+    case green
+    case blue
+    case indigo
+    case violet
+}
+
+enum Experience: CaseIterable {
+    case randomHue
+    case specificHue
+    
+    static func returnCase(from int: Int) -> Experience {
+        guard int < Experience.allCases.count else { return .randomHue }
+        return Experience.allCases[int]
+    }
+    
+    static func returnIndex(from experience: Experience) -> Int {
+        return Experience.allCases.firstIndex(of: experience) ?? 0
+    }
+}

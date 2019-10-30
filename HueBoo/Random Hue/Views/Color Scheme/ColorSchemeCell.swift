@@ -35,11 +35,11 @@ class ColorSchemeCell: UICollectionViewCell, ColorSetDisplayable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func display(colorSet: ColorSet?) {
-        guard let colorSet = colorSet else { return }
+    func display(colorSet: ColorSet?, as colorScheme: ColorScheme?) {
+        guard let colorSet = colorSet, let colorScheme = colorScheme else { return }
         resetCell()
-        schemeLabel.text = colorSet.colorScheme?.rawValue
-        add(colors: colorSet.getColorScheme())
+        schemeLabel.text = colorScheme.rawValue
+        add(colors: colorSet.get(colorScheme: colorScheme))
     }
     
     private func add(colors colorSets: [ColorSet]) {
