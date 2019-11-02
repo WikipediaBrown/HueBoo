@@ -43,6 +43,7 @@ class RootCell: UICollectionViewCell, PrimaryCellListener {
         collectionView.delegate = self
         
         addSubview(collectionView)
+        backgroundColor = .clear
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),

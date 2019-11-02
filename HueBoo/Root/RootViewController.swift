@@ -21,9 +21,9 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
 
     weak var listener: RootPresentableListener?
     
+    private let displayCount = 2
     private let gradient = CAGradientLayer()
     private let gradientList = GradientList()
-    private let displayCount = 2
     
     private var initialColor: CGColor?
 
@@ -34,30 +34,11 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     
     func animateViewControllerReplacement(viewController: UIViewController){
         viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true, completion: nil)
-//        self.addChild(viewController)
-//        self.view.insertSubview(viewController.view, belowSubview: menuView)
-//        viewController.didMove(toParent: self)
-//
-//        let origin = CGPoint(x: 0, y: UIScreen.main.bounds.height)
-//        viewController.view.frame = CGRect(origin: origin, size: UIScreen.main.bounds.size)
-//
-//        UIView.animate(withDuration: Constants.Root.TimeIntervals.menuSwapDuration, animations: {
-//            viewController.view.center.y = UIScreen.main.bounds.height/2
-//            self.currentViewController?.view.center.y = UIScreen.main.bounds.height*1.5
-//            self.setNeedsStatusBarAppearanceUpdate()
-//        }) { (true) in
-//            self.currentViewController?.willMove(toParent: nil)
-//            self.currentViewController?.view.removeFromSuperview()
-//            self.currentViewController?.removeFromParent()
-//            self.currentViewController = viewController
-//        }
+        present(viewController, animated: false, completion: nil)
     }
     
     func present(initialColor colorSet: ColorSet) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2)  { [weak self] in
-            self?.initialColor = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha).cgColor
-        }
+        initialColor = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha).cgColor
     }
 
     private func setupViews() {
@@ -105,15 +86,4 @@ extension RootViewController: CAAnimationDelegate {
         animateColors(gradient: gradient)
     }
 
-}
-
-
-class SwapAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        
-    }
 }

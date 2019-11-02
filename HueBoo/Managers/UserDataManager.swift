@@ -14,7 +14,6 @@ protocol UserDataManaging {
     func hueFor(index: Int) -> ColorSet?
     func recentHue() -> ColorSet?
     func retrieveCurrentExperience() -> Experience
-    func retrieveQueue()
     func save(experience: Experience)
 }
 
@@ -42,13 +41,18 @@ class UserDataManager: UserDataManaging {
         return hueQueue.back
     }
     
-    func retrieveQueue() {
+    func removeAll() {
+        hueQueue.removeAll()
+        saveQueue()
+    }
+    
+    private func retrieveQueue() {
         guard
             let data = UserDefaults.standard.data(forKey: Constants.Strings.queueName),
-            let hueQueue = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? HueQueue<ColorSet>
+            let hueQueue = try? JSONDecoder().decode(HueQueue<ColorSet>.self, from: data)
         else { return }
+        
         self.hueQueue = hueQueue
-        print(hueQueue.count)
     }
     
     func retrieveCurrentExperience() -> Experience {
@@ -62,13 +66,9 @@ class UserDataManager: UserDataManaging {
     }
     
     func saveQueue() {
-        guard
-            let data = try? NSKeyedArchiver.archivedData(withRootObject: hueQueue, requiringSecureCoding: true)
-        else { return }
-        
-        let defaults = UserDefaults.standard
-        defaults.set(data, forKey: Constants.Strings.queueName)
-        
+        guard let data = try? JSONEncoder().encode(hueQueue) else { return }
+        UserDefaults.standard.set(data, forKey: Constants.Strings.queueName)
+        UserDefaults.standard.synchronize()
     }
     
 }

@@ -24,6 +24,7 @@ class PrimaryCollectionView: UICollectionView {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         super.init(frame: .zero, collectionViewLayout: layout)
+        backgroundColor = .clear
         contentInsetAdjustmentBehavior = .never
         isPagingEnabled = true
         register(PrimaryCell.self, forCellWithReuseIdentifier: PrimaryCell.description())

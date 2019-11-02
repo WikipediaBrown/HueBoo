@@ -22,9 +22,7 @@ protocol RandomHuePresentableListener: class {
 final class RandomHueViewController: UIViewController, RandomHuePresentable, RandomHueViewControllable, RootCollectionViewListening {
 
     weak var listener: RandomHuePresentableListener?
-        
-    var hasAppeared: Bool = false
-    
+            
     private let collectionView: RootCollectionView = RootCollectionView()
     
     private var statusBarStyle: UIStatusBarStyle?
@@ -32,13 +30,9 @@ final class RandomHueViewController: UIViewController, RandomHuePresentable, Ran
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        update()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        showFirstItem()
-    }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle ?? UIStatusBarStyle.lightContent
     }
@@ -75,13 +69,25 @@ final class RandomHueViewController: UIViewController, RandomHuePresentable, Ran
         }
     }
     
+    private func update() {
+        
+        guard collectionView.numberOfItems(inSection: 0) > 0 else { return }
+        
+        collectionView.setNeedsLayout()
+        collectionView.layoutIfNeeded()
+        
+        let index = collectionView.numberOfItems(inSection: 0) - 1
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .right, animated: false)
+        
+    }
+    
     private func setupViews() {
         
         collectionView.listener = self
         collectionView.backgroundColor = .clear
         
         view.addSubview(collectionView)
-        view.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -92,10 +98,4 @@ final class RandomHueViewController: UIViewController, RandomHuePresentable, Ran
         
     }
     
-    private func showFirstItem() {
-        if hasAppeared == false {
-            hasAppeared = true
-            listener?.onHeroTile()
-        }
-    }
 }

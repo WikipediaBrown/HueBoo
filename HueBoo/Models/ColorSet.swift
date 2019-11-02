@@ -8,14 +8,19 @@
 
 import UIKit
 
-struct ColorSet: Equatable {
+struct ColorSet: Equatable, Codable {
     
     let hue: CGFloat
     let saturation: CGFloat
     let brightness: CGFloat
     let alpha: CGFloat
-    
-    var colorScheme: ColorScheme?
+        
+    private enum CodingKeys: String, CodingKey {
+        case alpha
+        case brightness
+        case hue
+        case saturation
+    }
     
     init(initialColor: UIColor) {
         var hue: CGFloat = 0

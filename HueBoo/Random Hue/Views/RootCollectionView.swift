@@ -25,6 +25,7 @@ class RootCollectionView: UICollectionView {
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         layout.minimumLineSpacing = 0
         super.init(frame: .zero, collectionViewLayout: layout)
+        backgroundColor = .clear
         dataSource = self
         delegate = self
         isPagingEnabled = true
@@ -56,7 +57,7 @@ extension RootCollectionView: UICollectionViewDataSource {
 }
 
 extension RootCollectionView: UICollectionViewDelegate {
-    
+        
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         switch cell {
@@ -76,7 +77,7 @@ extension RootCollectionView: UICollectionViewDelegate {
         let currentIndex = scrollView.contentOffset.x / scrollView.frame.size.width
         guard currentIndex == floor(currentIndex) else { return }
         
-        listener?.onPage(at: Int(currentIndex))
+//        listener?.onPage(at: Int(currentIndex))
         
     }
     

@@ -49,12 +49,12 @@ enum ColorCells: CaseIterable {
 
 enum ColorScheme: String, CaseIterable {
     
-    case monochromatic = "Monochromatic"
-    case complementary = "Complementary"
-    case splitComplementary = "Split Complementary"
-    case analogous = "Analogous"
-    case triadic = "Triadic"
-    case tetradic = "Tetradic"
+    case monochromatic = "Onesie"
+    case complementary = "BuddyCop"
+    case splitComplementary = "Splitsville"
+    case analogous = "Analog"
+    case triadic = "Trio"
+    case tetradic = "SquareBear"
 
     static func getScheme(from index: Int) -> ColorScheme? {
         guard index < ColorScheme.allCases.count else { return nil }

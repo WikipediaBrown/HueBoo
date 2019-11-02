@@ -8,16 +8,19 @@
 
 import Foundation
 
-struct HueQueue<T> {
-    private var array = [T?]()
-    private var head = 0
+struct HueQueue<T: Codable>: Codable {
     
+    var back: T? { return isEmpty ? nil : array[array.index(before: array.endIndex)]}
+    var count: Int { return array.count - head}
+    var front: T? { return isEmpty ? nil : array[head] }
     var isEmpty: Bool { return count == 0 }
     
-    var count: Int { return array.count - head}
-    
-    mutating func enqueue(_ element: T) {
-        array.append(element)
+    private var array = [T?]()
+    private var head = 0
+
+    private enum CodingKeys: String, CodingKey {
+        case array
+        case head
     }
     
     mutating func dequeue() -> T? {
@@ -34,11 +37,19 @@ struct HueQueue<T> {
         return element
     }
     
+    
     func element(at index: Int) -> T? {
         guard index < count else { return nil }
         return array[head + index]
     }
+    
+    mutating func enqueue(_ element: T) {
+        array.append(element)
+    }
+    
+    mutating func removeAll() {
+        array = [T?]()
+        head = 0
+    }
 
-    var front: T? { return isEmpty ? nil : array[head] }
-    var back: T? { return isEmpty ? nil : array[array.index(before: array.endIndex)]}
 }
