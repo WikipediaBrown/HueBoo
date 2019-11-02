@@ -12,7 +12,6 @@ protocol RootCollectionViewListening: class {
     func onTap()
     func onDisplayCell(at indexPath: IndexPath) -> ColorSet?
     func onDisplayCount() -> Int?
-    func onPage(at index: Int)
 }
 
 class RootCollectionView: UICollectionView {
@@ -69,15 +68,6 @@ extension RootCollectionView: UICollectionViewDelegate {
         default:
             break
         }
-        
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let currentIndex = scrollView.contentOffset.x / scrollView.frame.size.width
-        guard currentIndex == floor(currentIndex) else { return }
-        
-//        listener?.onPage(at: Int(currentIndex))
         
     }
     

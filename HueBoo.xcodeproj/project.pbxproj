@@ -308,10 +308,10 @@
 		5BEC0F0B23690BBC0078B8A0 /* Specific Hue */ = {
 			isa = PBXGroup;
 			children = (
-				5BEC0F1423690BF70078B8A0 /* SpecificHueRouter.swift */,
-				5BEC0F1523690BF70078B8A0 /* SpecificHueViewController.swift */,
 				5BEC0F1623690BF70078B8A0 /* SpecificHueBuilder.swift */,
 				5BEC0F1723690BF70078B8A0 /* SpecificHueInteractor.swift */,
+				5BEC0F1423690BF70078B8A0 /* SpecificHueRouter.swift */,
+				5BEC0F1523690BF70078B8A0 /* SpecificHueViewController.swift */,
 			);
 			path = "Specific Hue";
 			sourceTree = "<group>";
@@ -820,7 +820,7 @@
 				CURRENT_PROJECT_VERSION = 1571605502;
 				DEVELOPMENT_TEAM = 4AM5US9G8B;
 				INFOPLIST_FILE = HueBoo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -843,7 +843,7 @@
 				CURRENT_PROJECT_VERSION = 1571605502;
 				DEVELOPMENT_TEAM = 4AM5US9G8B;
 				INFOPLIST_FILE = HueBoo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

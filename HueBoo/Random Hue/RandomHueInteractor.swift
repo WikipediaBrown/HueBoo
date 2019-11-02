@@ -59,6 +59,10 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
         presenter.insertColorSet(at: indexPath)
     }
     
+    func onSpecificHue() {
+        
+    }
+    
     func colorSet(at indexPath: IndexPath) -> ColorSet? {
         guard indexPath.item < userDataManager.count else { return nil }
         return userDataManager.hueFor(index: indexPath.item)

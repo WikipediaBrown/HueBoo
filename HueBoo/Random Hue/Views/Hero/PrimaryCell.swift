@@ -19,6 +19,13 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
     private let hexLabel = PrimaryLabel()
     private let rgbLabel = PrimaryLabel()
     
+    private let specificHueButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .green
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     weak var listener: PrimaryCellListener?
     
     override init(frame: CGRect) {
@@ -49,19 +56,42 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
         listener?.cellTapped()
     }
     
+    @objc
+    private func specificHueButtonTapped() {
+        
+    }
+    
     private func setupViews() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
         addGestureRecognizer(tap)
+        
+        let buttonSize: CGFloat = 44
+        
+        specificHueButton.target(forAction: #selector(specificHueButtonTapped), withSender: nil)
+        
         addSubview(hexLabel)
         addSubview(rgbLabel)
+        addSubview(specificHueButton)
+        
         NSLayoutConstraint.activate([
             hexLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             hexLabel.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
-            hexLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
+            hexLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             rgbLabel.topAnchor.constraint(equalTo: hexLabel.bottomAnchor, constant: Constants.CGFloats.cellPadding),
             rgbLabel.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
-            rgbLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
+            rgbLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            specificHueButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            specificHueButton.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
+            specificHueButton.heightAnchor.constraint(equalToConstant: buttonSize),
+            specificHueButton.widthAnchor.constraint(equalToConstant: buttonSize)
+        ])
+        
     }
     
     private func updateAccessiblility(withHex hexString: String, andRGB rgbString: String) {

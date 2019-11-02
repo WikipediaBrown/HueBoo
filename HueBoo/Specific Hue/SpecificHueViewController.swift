@@ -19,4 +19,9 @@ protocol SpecificHuePresentableListener: class {
 final class SpecificHueViewController: UIViewController, SpecificHuePresentable, SpecificHueViewControllable {
 
     weak var listener: SpecificHuePresentableListener?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .red
+    }
 }

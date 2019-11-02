@@ -45,7 +45,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         attachChild(router)
     }
     
-    func routeToInitialExperience() {
+    func routeToPreparedExperience() {
         guard let router = currentRIB else { return }
         viewController.animateViewControllerReplacement(viewController: router.viewControllable.uiviewController)
     }

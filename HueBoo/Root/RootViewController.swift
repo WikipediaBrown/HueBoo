@@ -31,6 +31,10 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
         super.viewDidLoad()
         setupViews()
     }
+        
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     func animateViewControllerReplacement(viewController: UIViewController){
         viewController.modalPresentationStyle = .fullScreen
@@ -42,7 +46,7 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     }
 
     private func setupViews() {
-        
+                
         gradient.frame = UIScreen.main.bounds
         gradient.colors = gradientList.getListOfColors(displayCount)
         

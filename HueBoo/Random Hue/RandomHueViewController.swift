@@ -55,18 +55,22 @@ final class RandomHueViewController: UIViewController, RandomHuePresentable, Ran
     }
     
     func onPage(at index: Int) {
+        
         let indexPath = IndexPath(item: index, section: 0)
         guard let colorSet = listener?.colorSet(at: indexPath) else { return }
+        
         let color = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha)
+        
         if Constants.getTextColor(from: color) == .white {
             statusBarStyle = .lightContent
         } else {
             statusBarStyle = .default
         }
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.setNeedsStatusBarAppearanceUpdate()
         }
+        
     }
     
     private func update() {

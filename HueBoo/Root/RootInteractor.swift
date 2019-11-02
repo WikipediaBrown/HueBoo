@@ -12,7 +12,7 @@ import RxSwift
 protocol RootRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
     func prepare(experience: Experience)
-    func routeToInitialExperience()
+    func routeToPreparedExperience()
 }
 
 protocol RootPresentable: Presentable {
@@ -57,7 +57,12 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     }
     
     func onCompletion() {
-        router?.routeToInitialExperience()
+        router?.routeToPreparedExperience()
+    }
+    
+    func onExperienceChange(experience: Experience) {
+        router?.prepare(experience: experience)
+        router?.routeToPreparedExperience()
     }
     
 }
