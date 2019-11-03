@@ -17,7 +17,8 @@
 		5BAF052F236966410068DA3E /* GradientNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF052E236966410068DA3E /* GradientNode.swift */; };
 		5BAF053123696BC20068DA3E /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF053023696BC20068DA3E /* UserDataManager.swift */; };
 		5BAF0533236984F30068DA3E /* HueQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF0532236984F30068DA3E /* HueQueue.swift */; };
-		5BAF0536236E66A00068DA3E /* SpecificHueField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF0535236E66A00068DA3E /* SpecificHueField.swift */; };
+		5BAF0536236E66A00068DA3E /* SpecificHueHexField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF0535236E66A00068DA3E /* SpecificHueHexField.swift */; };
+		5BAF0538236E71C40068DA3E /* SpecificHueRGBField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF0537236E71C40068DA3E /* SpecificHueRGBField.swift */; };
 		5BB27805233715F00001FB46 /* HueBooLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB27804233715F00001FB46 /* HueBooLabel.swift */; };
 		5BBAF45D236901A7009CFD35 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAF459236901A7009CFD35 /* RootRouter.swift */; };
 		5BBAF45E236901A7009CFD35 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAF45A236901A7009CFD35 /* RootViewController.swift */; };
@@ -88,7 +89,8 @@
 		5BAF052E236966410068DA3E /* GradientNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientNode.swift; sourceTree = "<group>"; };
 		5BAF053023696BC20068DA3E /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		5BAF0532236984F30068DA3E /* HueQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueQueue.swift; sourceTree = "<group>"; };
-		5BAF0535236E66A00068DA3E /* SpecificHueField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificHueField.swift; sourceTree = "<group>"; };
+		5BAF0535236E66A00068DA3E /* SpecificHueHexField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificHueHexField.swift; sourceTree = "<group>"; };
+		5BAF0537236E71C40068DA3E /* SpecificHueRGBField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificHueRGBField.swift; sourceTree = "<group>"; };
 		5BB27804233715F00001FB46 /* HueBooLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueBooLabel.swift; sourceTree = "<group>"; };
 		5BBAF459236901A7009CFD35 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		5BBAF45A236901A7009CFD35 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +175,8 @@
 		5BAF0534236E66730068DA3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5BAF0535236E66A00068DA3E /* SpecificHueField.swift */,
+				5BAF0535236E66A00068DA3E /* SpecificHueHexField.swift */,
+				5BAF0537236E71C40068DA3E /* SpecificHueRGBField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				5B9C91EB2363AD9900EA7839 /* PrimaryCollectionView.swift in Sources */,
 				5BC9BD9F233237FD0028AC29 /* AppDelegate.swift in Sources */,
 				5B9C91F12363CEC500EA7839 /* ColorSchemeCell.swift in Sources */,
+				5BAF0538236E71C40068DA3E /* SpecificHueRGBField.swift in Sources */,
 				5BEC0F1323690BE80078B8A0 /* RandomHueInteractor.swift in Sources */,
 				5B9C91F32363DE8F00EA7839 /* Enums.swift in Sources */,
 				5BBAF460236901A7009CFD35 /* RootInteractor.swift in Sources */,
@@ -641,7 +645,7 @@
 				5BAF053123696BC20068DA3E /* UserDataManager.swift in Sources */,
 				5BC9BDCB233238E20028AC29 /* Constants.swift in Sources */,
 				5BC9BDCF233239020028AC29 /* RootCollectionView.swift in Sources */,
-				5BAF0536236E66A00068DA3E /* SpecificHueField.swift in Sources */,
+				5BAF0536236E66A00068DA3E /* SpecificHueHexField.swift in Sources */,
 				5BC9BDCD233238F30028AC29 /* PrimaryLabel.swift in Sources */,
 				5BAF0533236984F30068DA3E /* HueQueue.swift in Sources */,
 			);

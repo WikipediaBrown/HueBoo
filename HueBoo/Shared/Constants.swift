@@ -26,6 +26,7 @@ struct Constants {
         static let screenSize: CGSize = UIScreen.main.bounds.size
         static let primaryCellSize: CGSize = UIScreen.main.bounds.size
         static let colorSchemeCellSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloats.colorSchemeCellHeight)
+        static let swapButtonSize: CGSize = CGSize(width: 44, height: 44)
     }
     struct Strings {
         static let currentExperience = "CurrentExperience"

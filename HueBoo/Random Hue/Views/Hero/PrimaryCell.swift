@@ -63,11 +63,12 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
     }
     
     private func setupViews() {
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        let buttonSize: CGSize = Constants.CGSizes.swapButtonSize
+
         addGestureRecognizer(tap)
-        
-        let buttonSize: CGFloat = 44
-        
+                
         specificHueButton.addTarget(self, action: #selector(specificHueButtonTapped), for: .touchUpInside)
                 
         addSubview(hexLabel)
@@ -87,10 +88,10 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
         ])
         
         NSLayoutConstraint.activate([
-            specificHueButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            specificHueButton.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
-            specificHueButton.heightAnchor.constraint(equalToConstant: buttonSize),
-            specificHueButton.widthAnchor.constraint(equalToConstant: buttonSize)
+            specificHueButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            specificHueButton.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -10),
+            specificHueButton.heightAnchor.constraint(equalToConstant: buttonSize.height),
+            specificHueButton.widthAnchor.constraint(equalToConstant: buttonSize.width)
         ])
         
     }

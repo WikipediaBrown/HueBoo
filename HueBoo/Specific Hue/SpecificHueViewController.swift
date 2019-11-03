@@ -14,29 +14,48 @@ protocol SpecificHuePresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
+    func onRandomHue()
 }
 
 final class SpecificHueViewController: UIViewController, SpecificHuePresentable, SpecificHueViewControllable {
 
     weak var listener: SpecificHuePresentableListener?
     
-    private let hexField = SpecificHueField()
-    private let rgbField = SpecificHueField()
+    private let hexField = SpecificHueHexField()
+    private let rgbField = SpecificHueRGBField()
+    
+    private let randomHueButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .green
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
     
-    
+    @objc
+    func randomHueButtonTapped() {
+        listener?.onRandomHue()
+    }
     
     private func setupViews() {
+        
+        let buttonSize: CGSize = Constants.CGSizes.swapButtonSize
+        
+        randomHueButton.addTarget(self, action: #selector(randomHueButtonTapped), for: .touchUpInside)
         
         view.backgroundColor = .white
         
         view.addSubview(hexField)
+        view.addSubview(randomHueButton)
         view.addSubview(rgbField)
         
+        hexField.delegate = self
+        hexField.backgroundColor = .green
+
         NSLayoutConstraint.activate([
             hexField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             hexField.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
@@ -49,6 +68,44 @@ final class SpecificHueViewController: UIViewController, SpecificHuePresentable,
             rgbField.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor)
         ])
         
+        NSLayoutConstraint.activate([
+             randomHueButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+             randomHueButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10),
+             randomHueButton.heightAnchor.constraint(equalToConstant: buttonSize.height),
+             randomHueButton.widthAnchor.constraint(equalToConstant: buttonSize.width)
+         ])
+        
+    }
+}
+
+extension SpecificHueViewController: UITextFieldDelegate {
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case is SpecificHueHexField:
+            guard string != "#" else { return false }
+
+            guard let textField = textField as? SpecificHueHexField else {return false}
+            var hexString = textField.hexString
+            
+            if string == "" {
+                
+                hexString.replacingCharacters(in: range, with: string)
+                                
+            } else {
+                
+            }
+            
+        case is SpecificHueRGBField:
+            print(textField.description)
+        default:
+            break
+        }
+        
+        print("The range is \(range.location)")
+        print("The string is \(string)")
+        return true
     }
 }
 

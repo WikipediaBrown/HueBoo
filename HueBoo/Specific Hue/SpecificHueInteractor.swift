@@ -20,6 +20,8 @@ protocol SpecificHuePresentable: Presentable {
 
 protocol SpecificHueListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func onInitial(colorSet: ColorSet)
+    func onExperienceChange(experience: Experience)
 }
 
 final class SpecificHueInteractor: PresentableInteractor<SpecificHuePresentable>, SpecificHueInteractable, SpecificHuePresentableListener {
@@ -42,5 +44,9 @@ final class SpecificHueInteractor: PresentableInteractor<SpecificHuePresentable>
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func onRandomHue() {
+        listener?.onExperienceChange(experience: .randomHue)
     }
 }

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SpecificHueField: UITextField {
+class SpecificHueHexField: UITextField {
+    
+    var hexString: NSString = ""
 
     override init(frame: CGRect) {
         super.init(frame: frame)
