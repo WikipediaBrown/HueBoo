@@ -32,6 +32,7 @@ struct Constants {
         static let currentExperience = "CurrentExperience"
         static let cannotParse: String = "Sorry, but we couldn't parse this color. We've already been notified so don't even trip dooooooog."
         static let queueName = "HueQueue"
+        static let hexRegEX = #"/^#([0-9a-f]{3}){1,2}$/i"#
     }
     
     static func getTextColor(from color: UIColor) -> UIColor {
