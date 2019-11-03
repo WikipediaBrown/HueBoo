@@ -21,6 +21,7 @@ protocol RandomHuePresentable: Presentable {
 
 protocol RandomHueListener: class {
     func onInitial(colorSet: ColorSet)
+    func onExperienceChange(experience: Experience)
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
@@ -60,7 +61,7 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
     }
     
     func onSpecificHue() {
-        
+        listener?.onExperienceChange(experience: .specificHue)
     }
     
     func colorSet(at indexPath: IndexPath) -> ColorSet? {

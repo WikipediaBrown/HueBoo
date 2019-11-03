@@ -14,9 +14,10 @@ protocol RandomHuePresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
-    func onHeroTile()
     func colorSet(at indexPath: IndexPath) -> ColorSet?
     func onCountRequest() -> Int
+    func onHeroTile()
+    func onSpecificHue()
 }
 
 final class RandomHueViewController: UIViewController, RandomHuePresentable, RandomHueViewControllable, RootCollectionViewListening {
@@ -48,6 +49,10 @@ final class RandomHueViewController: UIViewController, RandomHuePresentable, Ran
     
     func onDisplayCount() -> Int? {
         return listener?.onCountRequest()
+    }
+    
+    func onSpecificHueButtonTapped() {
+        listener?.onSpecificHue()
     }
     
     func onTap() {

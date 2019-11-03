@@ -12,6 +12,7 @@ import UIKit
 
 protocol PrimaryCellListener: class {
     func cellTapped()
+    func specificHueButtonTapped()
 }
 
 class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
@@ -58,7 +59,7 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
     
     @objc
     private func specificHueButtonTapped() {
-        
+        listener?.specificHueButtonTapped()
     }
     
     private func setupViews() {
@@ -67,8 +68,8 @@ class PrimaryCell: UICollectionViewCell, ColorSetDisplayable {
         
         let buttonSize: CGFloat = 44
         
-        specificHueButton.target(forAction: #selector(specificHueButtonTapped), withSender: nil)
-        
+        specificHueButton.addTarget(self, action: #selector(specificHueButtonTapped), for: .touchUpInside)
+                
         addSubview(hexLabel)
         addSubview(rgbLabel)
         addSubview(specificHueButton)

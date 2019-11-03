@@ -32,17 +32,20 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     }
     
     func prepare(experience: Experience) {
+        
         if let currentRIB = currentRIB { detachChild(currentRIB) }
+        let ribToPrepare: ViewableRouting
         
         switch experience {
         case .randomHue:
-            currentRIB = RandomHueBuilder(dependency: component).build(withListener: interactor)
+            ribToPrepare = RandomHueBuilder(dependency: component).build(withListener: interactor)
         case .specificHue:
-            currentRIB = SpecificHueBuilder(dependency: component).build(withListener: interactor)
+            ribToPrepare = SpecificHueBuilder(dependency: component).build(withListener: interactor)
         }
         
-        guard let router = currentRIB else { return }
-        attachChild(router)
+        currentRIB = ribToPrepare
+        attachChild(ribToPrepare)
+        
     }
     
     func routeToPreparedExperience() {
@@ -50,16 +53,29 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         viewController.animateViewControllerReplacement(viewController: router.viewControllable.uiviewController)
     }
     
-//    func routeTo(experience: Experience) {
-//        switch experience {
-//        case .randomHue:
-//            currentRIB = RandomHueBuilder(dependency: component).build(withListener: interactor)
-//            print("random")
-//        case .specificHue:
-//            currentRIB = SpecificHueBuilder(dependency: component).build(withListener: interactor)
-//            print("specific")
-//        }
-//        swapChildren(router: router)
-//    }
+    func routeToExperience(experience: Experience) {
+        
+        if let currentRIB = currentRIB { detachChild(currentRIB) }
+
+        let rib: ViewableRouting
+        
+        switch experience {
+        case .randomHue:
+            rib = RandomHueBuilder(dependency: component).build(withListener: interactor)
+        case .specificHue:
+            rib = SpecificHueBuilder(dependency: component).build(withListener: interactor)
+        }
+        
+        attachChild(rib)
+        
+        let viewController = rib.viewControllable.uiviewController
+        viewController.modalPresentationStyle = .fullScreen
+                
+        currentRIB?.viewControllable.uiviewController.dismiss(animated: false, completion: nil)
+        viewControllable.uiviewController.present(viewController, animated: false, completion: nil)
+        
+        currentRIB = rib
+
+    }
 
 }

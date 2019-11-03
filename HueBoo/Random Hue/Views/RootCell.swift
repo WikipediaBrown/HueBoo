@@ -10,6 +10,7 @@ import UIKit
 
 protocol RootCellListener: class {
     func onTap(at indexPath: IndexPath)
+    func onSpecificHueButtonTapped()
 }
 
 class RootCell: UICollectionViewCell, PrimaryCellListener {
@@ -38,12 +39,15 @@ class RootCell: UICollectionViewCell, PrimaryCellListener {
         listener?.onTap(at: indexPath)
     }
     
+    func specificHueButtonTapped() {
+        listener?.onSpecificHueButtonTapped()
+    }
+    
     private func setupViews() {
         collectionView.dataSource = self
         collectionView.delegate = self
         
         addSubview(collectionView)
-        backgroundColor = .clear
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),

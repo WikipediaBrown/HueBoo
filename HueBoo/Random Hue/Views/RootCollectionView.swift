@@ -9,9 +9,10 @@
 import UIKit
 
 protocol RootCollectionViewListening: class {
-    func onTap()
     func onDisplayCell(at indexPath: IndexPath) -> ColorSet?
     func onDisplayCount() -> Int?
+    func onTap()
+    func onSpecificHueButtonTapped()
 }
 
 class RootCollectionView: UICollectionView {
@@ -75,8 +76,13 @@ extension RootCollectionView: UICollectionViewDelegate {
 
 extension RootCollectionView: RootCellListener {
     
+    
     func onTap(at indexPath: IndexPath) {
         listener?.onTap()
+    }
+    
+    func onSpecificHueButtonTapped() {
+        listener?.onSpecificHueButtonTapped()
     }
     
 }
