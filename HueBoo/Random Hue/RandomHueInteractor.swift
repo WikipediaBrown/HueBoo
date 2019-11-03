@@ -30,8 +30,8 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
     weak var router: RandomHueRouting?
     weak var listener: RandomHueListener?
 
-    private let colorManager: ColorManaging
-    private let userDataManager: UserDataManaging
+    private weak var colorManager: ColorManaging?
+    private weak var userDataManager: UserDataManaging?
     
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
@@ -54,9 +54,9 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
     }
         
     func onHeroTile() {
-        let indexPath = IndexPath(item: userDataManager.count, section: 0)
-        let colorSet = colorManager.getRandomColor()
-        userDataManager.add(colorSet: colorSet)
+        let indexPath = IndexPath(item: userDataManager?.count ?? 0, section: 0)
+        let colorSet = colorManager?.getRandomColor()
+        userDataManager?.add(colorSet: colorSet)
         presenter.insertColorSet(at: indexPath)
     }
     
@@ -65,20 +65,20 @@ final class RandomHueInteractor: PresentableInteractor<RandomHuePresentable>, Ra
     }
     
     func colorSet(at indexPath: IndexPath) -> ColorSet? {
-        guard indexPath.item < userDataManager.count else { return nil }
-        return userDataManager.hueFor(index: indexPath.item)
+        guard indexPath.item < userDataManager?.count ?? 0 else { return nil }
+        return userDataManager?.hueFor(index: indexPath.item)
     }
     
     func onCountRequest() -> Int {
-        return userDataManager.count
+        return userDataManager?.count ?? 0
     }
     
     private func getRecentHue() {
-        if let colorSet = userDataManager.recentHue() {
+        if let colorSet = userDataManager?.recentHue() {
             listener?.onInitial(colorSet: colorSet)
         } else {
-            userDataManager.add(colorSet: colorManager.getRandomColor())
-            guard let colorSet = userDataManager.recentHue() else { return }
+            userDataManager?.add(colorSet: colorManager?.getRandomColor())
+            guard let colorSet = userDataManager?.recentHue() else { return }
             listener?.onInitial(colorSet: colorSet)
         }
     }

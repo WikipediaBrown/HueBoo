@@ -14,6 +14,7 @@ class SpecificHueRGBField: UITextField {
         super.init(frame: frame)
         font = UIFont.systemFont(ofSize: Constants.CGFloats.primaryLabelFontSize)
         isAccessibilityElement = false
+        text = "rgb()"
         textAlignment = .center
         translatesAutoresizingMaskIntoConstraints = false
     }

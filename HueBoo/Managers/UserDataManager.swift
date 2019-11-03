@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol UserDataManaging {
+protocol UserDataManaging: class {
     var count: Int { get }
-    func add(colorSet: ColorSet)
+    func add(colorSet: ColorSet?)
     func hueFor(index: Int) -> ColorSet?
     func recentHue() -> ColorSet?
     func retrieveCurrentExperience() -> Experience
@@ -28,7 +28,8 @@ class UserDataManager: UserDataManaging {
         retrieveQueue()
     }
     
-    func add(colorSet: ColorSet) {
+    func add(colorSet: ColorSet?) {
+        guard let colorSet = colorSet else { return }
         hueQueue.enqueue(colorSet)
         saveQueue()
     }

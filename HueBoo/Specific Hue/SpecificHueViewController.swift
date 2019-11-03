@@ -15,6 +15,8 @@ protocol SpecificHuePresentableListener: class {
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
     func onRandomHue()
+    func onNewHexValue(currentString: String?, range: NSRange, string: String) -> Bool
+    func onNewRGBValue(currentString: String?, range: NSRange, string: String) -> Bool
 }
 
 final class SpecificHueViewController: UIViewController, SpecificHuePresentable, SpecificHueViewControllable {
@@ -41,6 +43,19 @@ final class SpecificHueViewController: UIViewController, SpecificHuePresentable,
         listener?.onRandomHue()
     }
     
+    func setBackGroundColor(with colorSet: ColorSet?) {
+        guard let colorSet = colorSet else { return }
+        view.backgroundColor = UIColor(hue: colorSet.hue, saturation: colorSet.saturation, brightness: colorSet.brightness, alpha: colorSet.alpha)
+    }
+    
+    func setHexText(with string: String?) {
+        hexField.text = string
+    }
+    
+    func setRGBText(with string: String?) {
+        rgbField.text = string
+    }
+    
     private func setupViews() {
         
         let buttonSize: CGSize = Constants.CGSizes.swapButtonSize
@@ -54,7 +69,7 @@ final class SpecificHueViewController: UIViewController, SpecificHuePresentable,
         view.addSubview(rgbField)
         
         hexField.delegate = self
-        hexField.backgroundColor = .green
+        rgbField.delegate = self
 
         NSLayoutConstraint.activate([
             hexField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -80,32 +95,17 @@ final class SpecificHueViewController: UIViewController, SpecificHuePresentable,
 
 extension SpecificHueViewController: UITextFieldDelegate {
     
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
         switch textField {
         case is SpecificHueHexField:
-            guard string != "#" else { return false }
-
-            guard let textField = textField as? SpecificHueHexField else {return false}
-            var hexString = textField.hexString
-            
-            if string == "" {
-                
-                hexString.replacingCharacters(in: range, with: string)
-                                
-            } else {
-                
-            }
-            
+            return listener?.onNewHexValue(currentString: textField.text, range: range, string: string) ?? false
         case is SpecificHueRGBField:
-            print(textField.description)
+            return listener?.onNewRGBValue(currentString: textField.text, range: range, string: string) ?? false
         default:
-            break
+            return false
         }
         
-        print("The range is \(range.location)")
-        print("The string is \(string)")
-        return true
     }
 }
 

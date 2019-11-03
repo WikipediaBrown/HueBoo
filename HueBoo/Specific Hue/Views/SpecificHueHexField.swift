@@ -10,12 +10,11 @@ import UIKit
 
 class SpecificHueHexField: UITextField {
     
-    var hexString: NSString = ""
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         font = UIFont.systemFont(ofSize: Constants.CGFloats.primaryLabelFontSize)
         isAccessibilityElement = false
+        text = "#"
         textAlignment = .center
         translatesAutoresizingMaskIntoConstraints = false
     }
