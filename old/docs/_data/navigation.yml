@@ -1,0 +1,10 @@
+- name: Home
+  link: /HueBoo/index.html
+- name: About
+  link: /HueBoo/about.html
+- name: Privacy Policy
+  link: /HueBoo/privacy_policy.html
+- name: Blog
+  link: /HueBoo/blog.html
+- name: Contributors
+  link: /HueBoo/contributors.html
